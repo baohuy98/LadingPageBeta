@@ -7,8 +7,6 @@ import Item2 from '../../public/assets/image/item-2.png'
 import Item3 from '../../public/assets/image/item-3.png'
 import Item4 from '../../public/assets/image/item-4.png'
 
-
-
 export default function Home() {
   return (
     <Fragment>
@@ -21,12 +19,25 @@ export default function Home() {
         <meta name="keywords" content="B-Market, B-Info, B-Report, B-Signal, " />
         <link rel="canonical" href="https://www.example.com/your-page" />
       </Head>
-      <header className='w-[1440px] h-[60px]'>
+      <header className='container mx-auto h-[60px] flex justify-between items-center bg-[#154162] sticky top-0'>
         <div className='logo'>
           <Image src={Logo} alt='logo' ></Image>
         </div>
         <div className='navbar'>
-
+          <ul className="font-medium flex text-white">
+            <li>
+              <a href="#" className="block py-2 px-9 font-semibold text-[21px]">Dịch vụ</a>
+            </li>
+            <li>
+              <a href="#" className="block py-2 px-9 font-semibold text-[21px]">Sản phẩm</a>
+            </li>
+            <li>
+              <a href="#" className="block py-2 px-9 font-semibold text-[21px]">Liên hệ</a>
+            </li>
+            <li>
+              <button className="mx-4 my-1 block cssbuttons-io-button"><span>Sử dụng ngay</span></button>
+            </li>
+          </ul>
         </div>
       </header>
       <main>
@@ -61,6 +72,6 @@ export default function Home() {
         <section></section>
         <section></section>
       </main>
-    </Fragment>
+    </Fragment >
   )
 }

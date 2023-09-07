@@ -15,6 +15,24 @@ const config: Config = {
         'solution-section': ' linear-gradient(139deg, #2270F0 0%, #1EC4FA 61.91%);'
       },
     },
+    screens: {
+      xxs: { 'max': '375px' },
+      xs: '375px',
+      sm: "425px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1440px",
+      "2xl": "1920px",
+    },
+    container: {
+      screens: {
+        xs: "425px",
+        md: "768px",
+        lg: "768px",
+        xl: "1024px",
+        "2xl": "1440px",
+      },
+    },
   },
   plugins: [],
 }
