@@ -1,7 +1,13 @@
+import Head from 'next/head'
 import Image from 'next/image'
 import { Fragment } from 'react'
-import Head from 'next/head'
 import Logo from '../../public/assets/image/logo.png'
+import Item1 from '../../public/assets/image/item-1.png'
+import Item2 from '../../public/assets/image/item-2.png'
+import Item3 from '../../public/assets/image/item-3.png'
+import Item4 from '../../public/assets/image/item-4.png'
+
+
 
 export default function Home() {
   return (
@@ -19,11 +25,39 @@ export default function Home() {
         <div className='logo'>
           <Image src={Logo} alt='logo' ></Image>
         </div>
-        <div className='navbar'></div>
+        <div className='navbar'>
+
+        </div>
       </header>
       <main>
         <section></section>
-        <section></section>
+        <section className='solution_section w-[1440px] h-[960px] relative'>
+          <div className='solution_section-left'>
+            <div className='bg-solution-section w-[1198px] h-[1316px] rounded-[100px] rotate-[20deg]'>
+              <div className='rotate-[-20deg]'>
+                <h2 className='font-bold text-white text-[65px] '>GIẢI PHÁP</h2>
+                <span>
+                  PHÂN TÍCH DỮ LIỆU TÀI CHÍNH & GIAO DỊCH TRONG THỜI ĐẠI 4.0
+                </span>
+              </div>
+
+            </div>
+          </div>
+          <div className='solution_section-right flex'>
+            <div className='item-card '>
+              <Image src={Item1} alt='img-item1' width={215} height={212}></Image>
+            </div>
+            <div className='item-card'>
+              <Image src={Item2} alt='img-item2' width={215} height={212}></Image>
+            </div>
+            <div className='item-card'>
+              <Image src={Item3} alt='img-item3' width={215} height={212}></Image>
+            </div>
+            <div className='item-card'>
+              <Image src={Item4} alt='img-item4' width={215} height={212}></Image>
+            </div>
+          </div>
+        </section>
         <section></section>
         <section></section>
       </main>
