@@ -46,7 +46,7 @@ export default function Home() {
         </div>
       </header>
       <main>
-        <section className='h-[1185px] relative'>
+        <section className='h-[945px] relative'>
           <div className="bg-[url('../../public/assets/image/background-section1.jpg')] h-full bg-cover bg-center">
             <div className='absolute top-0 left-0 w-full h-full bg-black opacity-60'></div>
 
