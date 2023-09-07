@@ -1,3 +1,4 @@
+
 import Head from 'next/head'
 import Image from 'next/image'
 import { Fragment } from 'react'
@@ -16,28 +17,44 @@ export default function Home() {
   return (
     <Fragment>
       <Head>
-        <title>Chứng khoán Beta</title>
+        <title>B-Sign - Công cụ hỗ trợ đầu tư hàng đầu thị trường</title>
         <meta name="author" content="BSI" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Giới thiệu về các sản phẩm của Công ty chứng khoán Beta (BSI)" />
-        <meta name="keywords" content="đầu tư chứng khoán, thông tin chứng khoán, phân tích chứng khoán" />
-        <meta name="keywords" content="B-Market, B-Info, B-Report, B-Signal, " />
+        <meta
+          name="description"
+          content="B-Sign là hệ thống công cụ hỗ trợ đầu tư chứng khoán thông minh. Cung cấp và phân tích dữ liệu chứng khoán real - time nhanh chóng, đầy đủ và chính xác hữu ích cho nhà đầu tư."
+        />
+        <meta
+          name="keywords"
+          content="đầu tư chứng khoán, thông tin chứng khoán, phân tích chứng khoán"
+        />
+        <meta
+          name="keywords"
+          content="B-Market, B-Info, B-Report, B-Signal, "
+        />
         <link rel="canonical" href="https://www.example.com/your-page" />
       </Head>
+
       <header className='h-[60px] flex justify-between items-center bg-[#154162] sticky top-0 z-50'>
         <div className='logo'>
           <Image src={Logo} alt='logo' ></Image>
         </div>
-        <div className='navbar'>
+        <div className="navbar">
           <ul className="font-medium flex text-white">
             <li>
-              <a href="#" className="block py-2 px-9 font-semibold text-[21px]">Dịch vụ</a>
+              <a href="#" className="block py-2 px-9 font-semibold text-[21px]">
+                Dịch vụ
+              </a>
             </li>
             <li>
-              <a href="#" className="block py-2 px-9 font-semibold text-[21px]">Sản phẩm</a>
+              <a href="#" className="block py-2 px-9 font-semibold text-[21px]">
+                Sản phẩm
+              </a>
             </li>
             <li>
-              <a href="#" className="block py-2 px-9 font-semibold text-[21px]">Liên hệ</a>
+              <a href="#" className="block py-2 px-9 font-semibold text-[21px]">
+                Liên hệ
+              </a>
             </li>
             <li>
               <button className="mx-5 my-1 block cssbuttons-io-button"><span>Sử dụng ngay</span></button>
@@ -46,6 +63,7 @@ export default function Home() {
         </div>
       </header>
       <main>
+
         <section className='h-[945px] relative'>
           <div className="bg-[url('../../public/assets/image/background-section1.jpg')] h-full bg-cover bg-center">
             <div className='absolute top-0 left-0 w-full h-full bg-black opacity-60'></div>
@@ -91,27 +109,55 @@ export default function Home() {
                   PHÂN TÍCH DỮ LIỆU TÀI CHÍNH & GIAO DỊCH TRONG THỜI ĐẠI 4.0
                 </span>
               </div>
-
             </div>
           </div>
-          <div className='solution_section-right flex'>
-            <div className='item-card '>
-              <Image src={Item1} alt='img-item1' width={215} height={212}></Image>
+          <div className="solution_section-right grid grid-cols-2 absolute bottom-[-40%] right-[-20%] gap-5  ">
+            <div className="item-card p-5 flex flex-col justify-between items-center relative z-10">
+              <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl"></div>
+              <Image
+                src={Item1}
+                alt="img-item1"
+                width={215}
+                height={200}
+              ></Image>
+              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
             </div>
-            <div className='item-card'>
-              <Image src={Item2} alt='img-item2' width={215} height={212}></Image>
+            <div className="item-card p-5 flex flex-col justify-between items-center relative z-10">
+              <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl"></div>
+              <Image
+                src={Item2}
+                alt="img-item1"
+                width={215}
+                height={200}
+              ></Image>
+              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
             </div>
-            <div className='item-card'>
-              <Image src={Item3} alt='img-item3' width={215} height={212}></Image>
+            <div className="item-card p-5 flex flex-col justify-between items-center relative z-10">
+              <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl"></div>
+              <Image
+                src={Item3}
+                alt="img-item1"
+                width={215}
+                height={200}
+              ></Image>
+              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
             </div>
-            <div className='item-card'>
-              <Image src={Item4} alt='img-item4' width={215} height={212}></Image>
+            <div className="item-card p-5 flex flex-col justify-between items-center relative z-10">
+              <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl"></div>
+              <Image
+                src={Item4}
+                alt="img-item1"
+                width={215}
+                height={200}
+              ></Image>
+              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
             </div>
+
           </div>
         </section>
         <section></section>
         <section></section>
       </main>
-    </Fragment >
-  )
+    </Fragment>
+  );
 }
