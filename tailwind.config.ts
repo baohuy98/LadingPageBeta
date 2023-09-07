@@ -10,9 +10,8 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'solution-section': ' linear-gradient(139deg, #2270F0 0%, #1EC4FA 61.91%);'
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'solution-section': ' linear-gradient(139deg, #2270F0 0%, #1EC4FA 61.91%);',
       },
     },
     screens: {
