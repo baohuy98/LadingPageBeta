@@ -22,8 +22,19 @@ import IconZalo from '../../public/assets/image/icon-zalo.png'
 import section2CSS from '../styles/section2.module.css'
 import 'animate.css';
 
+const isServer = typeof window === 'undefined'
+const WOW = !isServer ? require('wowjs') : null
+
 export default function Home() {
 
+  useEffect(() => {
+    if (!isServer && WOW) {
+      const wow = new WOW.WOW({
+        offset: 100, // Adjust the offset value as needed
+      });
+      wow.init();
+    }
+  }, [])
 
   return (
     <Fragment>
@@ -58,7 +69,7 @@ export default function Home() {
               <a href="#" className="block py-2 lg:px-9 md:px-5 font-semibold text-[21px]">Dịch vụ</a>
             </li>
             <li>
-              <a href="#" className="block py-2 lg:px-9 md:px-5 font-semibold text-[21px]">Sản phẩm</a>
+              <a href="#solution_section" className="block py-2 lg:px-9 md:px-5 font-semibold text-[21px]">Sản phẩm</a>
             </li>
             <li>
               <a href="#contact_section" className="block py-2 lg:px-9 md:px-5 font-semibold text-[21px]">Liên hệ</a>
@@ -72,7 +83,7 @@ export default function Home() {
 
       {/* MAIN */}
       <main>
-        
+
         {/* SECTION B-SIGN */}
         <section className='bsign_section relative z-20 overflow-hidden'>
           <div className="bg-[url('https://resource.bsi.com.vn/resources/landing-page/background-section1.jpg')] h-full bg-cover bg-center">
@@ -120,12 +131,12 @@ export default function Home() {
             </div>
           </div>
         </section>
-        
+
         {/* SECTION SOLUTION */}
-        <section className='solution_section w-[1440px] h-screen relative z-10'>
+        <section className='solution_section w-[1440px] h-screen relative z-10' id='solution_section'>
           <div className='solution_section-left rotate-[15deg] translate-x-[-13%] '>
-            <div className={` bg-solution-section w-[80%] h-[1316px] rounded-[100px]  flex flex-col justify-center items-center animate__animated  animate__rotateInDownLeft  `}>
-              <div className=' h-fit rotate-[-15deg]  translate-x-[15%] translate-y-[-15%] animate__animated animate__fadeIn'>
+            <div className={`bg-solution-section w-[80%] h-[1316px] rounded-[100px]  flex flex-col justify-center items-center animate__animated animate__rotateInDownLeft wow`}>
+              <div className='h-fit rotate-[-15deg] translate-x-[15%] translate-y-[-15%] animate__animated animate__fadeIn'>
                 <h2 className='font-bold text-white text-[65px] text-center opacity-80 '>GIẢI PHÁP</h2>
                 <span className='font-bold text-white text-[65px]' >
                   PHÂN TÍCH DỮ LIỆU TÀI <br /> CHÍNH & GIAO DỊCH  <br /> TRONG THỜI ĐẠI 4.0
@@ -134,7 +145,7 @@ export default function Home() {
             </div>
           </div>
           <div className="solution_section-right grid grid-cols-2 absolute top-[30%] right-[-10%] gap-y-5 gap-x-10  ">
-            <div className={`item-card_1 p-5 flex flex-col justify-between items-center relative z-10 animate__animated  animate__fadeInDown `}>
+            <div className={`item-card_1 p-5 flex flex-col justify-between items-center relative z-10 animate__animated animate__fadeInDown wow`}>
               <div className="absolute top-0 w-full h-full bg-white opacity-60 z-[-1] drop-shadow-md rounded-xl">
               </div>
               <Image
@@ -143,7 +154,7 @@ export default function Home() {
               ></Image>
               <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
             </div>
-            <div className={` item-card_2 p-5 flex flex-col justify-between items-center relative z-10 animate__animated  animate__fadeInDown `}>
+            <div className={`item-card_2 p-5 flex flex-col justify-between items-center relative z-10 animate__animated animate__fadeInDown wow`}>
               <div className="absolute top-0 w-full h-full bg-white opacity-60 z-[-1] drop-shadow-md rounded-xl"></div>
               <Image
                 src={Item2}
@@ -151,7 +162,7 @@ export default function Home() {
               ></Image>
               <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Social Platform</span>
             </div>
-            <div className={` item-card_3 p-5 flex flex-col justify-between items-center relative z-10 animate__animated animate__fadeInUp `}>
+            <div className={`item-card_3 p-5 flex flex-col justify-between items-center relative z-10 animate__animated animate__fadeInUp wow`}>
               <div className="absolute top-0 w-full h-full bg-white opacity-60 z-[-1] drop-shadow-md rounded-xl"></div>
               <Image
                 src={Item3}
@@ -159,7 +170,7 @@ export default function Home() {
               ></Image>
               <span className="text-[#01A7FB] font-bold text-[30px] mt-5">AI Quick Report</span>
             </div>
-            <div className={` item-card_4 p-5 flex flex-col justify-between items-center relative z-10 animate__animated animate__fadeInUp `}>
+            <div className={`item-card_4 p-5 flex flex-col justify-between items-center relative z-10 animate__animated animate__fadeInUp wow`}>
               <div className="absolute top-0 w-full h-full bg-white opacity-60 z-[-1] drop-shadow-md rounded-xl"></div>
               <Image
                 src={Item4}
@@ -170,7 +181,7 @@ export default function Home() {
 
           </div>
         </section>
-        
+
         {/* SECTION INFO */}
         <section className='webInfo_section bg-webInfo-section h-[750px] relative z-30'></section>
 
