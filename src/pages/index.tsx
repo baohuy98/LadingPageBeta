@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Fragment, useEffect, useState, useRef } from 'react'
 import Logo from '../../public/assets/image/logo.png'
+import LogoColor from '../../public/assets/image/logo-color.png'
 import Item1 from '../../public/assets/image/item-1.png'
 import Item2 from '../../public/assets/image/item-2.png'
 import Item3 from '../../public/assets/image/item-3.png'
@@ -11,6 +12,13 @@ import Phone from '../../public/assets/image/iphone-layout.png'
 import GifLaptop from '../../public/assets/image/section1.2.gif'
 import GifPhone from '../../public/assets/image/section1.1.gif'
 import TextB from '../../public/assets/image/B.png'
+import QRTele from '../../public/assets/image/QR-telegram.png'
+import QRZalo from '../../public/assets/image/QR-Zalo.png'
+import BMarketTele from '../../public/assets/image/B-market-telegram mockup.png'
+import BSignal from '../../public/assets/image/Rectangle-bsign.png'
+import IconLogo from '../../public/assets/image/icon-logo.png'
+import IconTele from '../../public/assets/image/icon-tele.png'
+import IconZalo from '../../public/assets/image/icon-zalo.png'
 import section2CSS from '../styles/section2.module.css'
 import 'animate.css';
 
@@ -53,7 +61,7 @@ export default function Home() {
               <a href="#" className="block py-2 lg:px-9 md:px-5 font-semibold text-[21px]">Sản phẩm</a>
             </li>
             <li>
-              <a href="#" className="block py-2 lg:px-9 md:px-5 font-semibold text-[21px]">Liên hệ</a>
+              <a href="#contact_section" className="block py-2 lg:px-9 md:px-5 font-semibold text-[21px]">Liên hệ</a>
             </li>
             <li>
               <button className="mx-5 my-1 block cssbuttons-io-button"><span>Sử dụng ngay</span></button>
@@ -64,10 +72,9 @@ export default function Home() {
 
       {/* MAIN */}
       <main>
-
-
+        
         {/* SECTION B-SIGN */}
-        <section className='solution_bsign relative z-20'>
+        <section className='bsign_section relative z-20 overflow-hidden'>
           <div className="bg-[url('https://resource.bsi.com.vn/resources/landing-page/background-section1.jpg')] h-full bg-cover bg-center">
             <div className='absolute top-0 left-0 w-full h-full bg-black opacity-60'></div>
             <div className='relative z-10'>
@@ -89,7 +96,7 @@ export default function Home() {
 
                 <div className='animate__animated animate__fadeIn animate__slower'>
                   <div className='relative translate-x-[270px] translate-y-[190px] w-fit z-30'>
-                    <Image src={Phone} alt='phone' className='relative z-10' />
+                    <Image src={Phone} alt='phone' className='relative z-10 w-[258px]' />
                     <Image src={GifPhone} alt='gif-phone' className='absolute top-[9px] left-[64px] w-[128px] h-[268px] rounded-xl z-0' />
                   </div>
 
@@ -113,7 +120,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        
         {/* SECTION SOLUTION */}
         <section className='solution_section w-[1440px] h-screen relative z-10'>
           <div className='solution_section-left rotate-[15deg] translate-x-[-13%] '>
@@ -163,10 +170,180 @@ export default function Home() {
 
           </div>
         </section>
-        <section className='webInfo_section bg-webInfo-section h-screen relative z-30 mt-20 '></section>
-        <section></section>
+        
+        {/* SECTION INFO */}
+        <section className='webInfo_section bg-webInfo-section h-[750px] relative z-30'></section>
 
+        {/* SECTION B-MARKET */}
+        <section className='bmarket_section'>
+          <div className='grid grid-cols-2'>
+            <div className='px-[160px] py-[60px]'>
+              <h2 className='bmarket_section-title'>B- Market : Môi giới Số cho Nhà đầu tư </h2>
+
+              <p className='font-bold text-2xl pt-3'>Hỗ trợ nhu cầu dữ liệu thị trường theo thời gian<br></br> thực tự động, tiện lợi, chuẩn xác. Hoạt động trên<br></br> các nền tảng các mạng xã hội Zalo, Telegram. </p>
+
+              <ul>
+                <li className='pt-7'>
+                  <span className='flex'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+                      <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
+                    </svg>
+                    <p className='text-2xl pl-3'>Nhanh chóng và hiệu quả.</p>
+                  </span>
+                </li>
+                <li className='pt-6'>
+                  <span className='flex'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+                      <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
+                    </svg>
+                    <p className='text-2xl pl-3'>Trải nghiệm tiện lợi.</p>
+                  </span>
+                </li>
+                <li className='pt-6'>
+                  <span className='flex'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+                      <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
+                    </svg>
+                    <p className='text-2xl pl-3'>Không ngừng hoàn thiện</p>
+                  </span>
+                </li>
+              </ul>
+
+              <div className='flex justify-around pt-10'>
+                <div className='grid place-items-center'>
+                  <Image src={QRZalo} alt='qr-zalo' width={140} height={144.43} />
+                  <a href='https://zalo.me/1623670409453822014' target="_blank" className='text-2xl text-white font-bold'><button className='btn-zalo px-[69px] py-[10px]'>Zalo</button></a>
+                </div>
+                <div className='grid place-items-center'>
+                  <Image src={QRTele} alt='qr-tele' width={140} height={144.43} />
+                  <a href='https://t.me/betaEmarketbot' target="_blank" className='text-2xl text-white font-bold'><button className='btn-tele px-[38px] py-[10px]'>Telegram</button></a>
+                </div>
+              </div>
+            </div>
+
+            <div className='grid grid-cols-2 py-[60px]'>
+              <div className='relative w-fit z-30'>
+                <Image src={Phone} alt='phone' className='relative z-10' />
+                <Image src={GifPhone} alt='gif-phone' className='absolute top-[20px] left-[124px] w-[227px] h-[488px] rounded-xl z-0' />
+              </div>
+              <div>
+                <Image src={BMarketTele} alt='b-market-tele' className='w-[333px] h-[528px]' />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION B-REPORT */}
+        <section className='breport_section bg-breport-section h-[750px] relative z-30'></section>
+
+        {/* SECTION B-SIGNAL */}
+        <section className='bsignal_section relative'>
+          <div className='grid grid-cols-2'>
+            <div>
+              <h2 className='bsignal_section-title pt-[99px]'>Tránh bỏ lỡ những biến <br></br> động thị trường cùng hệ<br></br> thống cảnh báo B-Signal</h2>
+
+              <ul className='mt-[55px] ml-[200px]'>
+                <li className='pt-7'>
+                  <span className='flex'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+                      <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
+                    </svg>
+                    <p className='text-2xl pl-3'>Tối ưu hóa quyết định đầu tư dựa trên phân tích chính xác</p>
+                  </span>
+                </li>
+                <li className='pt-6'>
+                  <span className='flex'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+                      <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
+                    </svg>
+                    <p className='text-2xl pl-3'>Cảnh báo thời gian thực bằng tin nhắn</p>
+                  </span>
+                </li>
+                <li className='pt-6'>
+                  <span className='flex'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+                      <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
+                    </svg>
+                    <p className='text-2xl pl-3'>Tương thích trên nhiều nền tảng  khác nhau</p>
+                  </span>
+                </li>
+                <li className='pt-6'>
+                  <span className='flex'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+                      <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
+                    </svg>
+                    <p className='text-2xl pl-3'>Tùy chỉnh danh mục thông báo theo nhu cầu cá nhân.</p>
+                  </span>
+                </li>
+                <li className='pt-6'>
+                  <span className='flex'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+                      <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
+                    </svg>
+                    <p className='text-2xl pl-3'>Đã được tích hợp vào các sản phẩm công nghệ thuộc BETA.</p>
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <Image src={BSignal} alt='b-signal' className='h-[750px] w-[767px]' />
+            </div>
+          </div>
+          <div className='absolute bottom-0 right-0 p-4'>
+            <a href='#' className='flex items-center'>
+              <span className='animate__animated animate__bounce animate__slow animate__infinite'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="19" viewBox="0 0 22 19" fill="none">
+                  <path d="M11.4605 0L22 19H0L11.4605 0Z" fill="#0EF809" />
+                </svg>
+              </span>
+              <span className='font-bold text-2xl pl-[10px]'>Đầu trang</span>
+            </a>
+          </div>
+        </section>
       </main>
-    </Fragment>
+
+      {/* FOOTER */}
+      <footer>
+        <section className='contact_section h-[500px]' id='contact_section'>
+          <div className="bg-[url('../../public/assets/image/footer-img.png')] h-full bg-center bg-[length:100%_500px]">
+            <div className='text-center pt-[79px]'>
+              <h2 className='contact_section-title text-[55px] font-bold'>MIỄN PHÍ DÙNG THỬ CÔNG CỤ HỖ TRỢ <br></br> ĐẦU TƯ SINH LỜI HIỆU QUẢ </h2>
+            </div>
+            <div className='flex flex-col items-center'>
+              <div className='flex justify-around pt-[85px] w-[1000px]'>
+                <a href='https://zalo.me/1623670409453822014' target="_blank" className='text-2xl text-white font-bold'><button className='btn-zalo px-[69px] py-[10px]'>Zalo</button></a>
+                <a href='https://t.me/betaEmarketbot' target="_blank" className='text-2xl text-white font-bold'><button className='btn-tele px-[38px] py-[10px]'>Telegram</button></a>
+                <a href='#' className='text-2xl text-white font-bold'><button className='btn-web px-[13px] py-[10px]'>Web Platform</button></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className='bg-[#041339] h-[536px]'>
+          <div className='flex px-[60px] py-[70px]'>
+            <div className='w-[70%]'>
+              <Image src={LogoColor} alt='logo-color' className='w-[250px] h-[98px]' />
+              <div className='text-white text-2xl pt-10 font-[Montserrat]'>
+                <ul>
+                  <li>Trụ sở: Toà nhà BETA - Lầu 4&5, số 55 Nam Kỳ Khởi Nghĩa,<br></br> Phường Nguyễn Thái Bình, Quận 1, Thành phố Hồ Chí Minh</li>
+                  <li className='pt-7'>Dị̣ch vụ khách hàng: <a href='tel:02839142626' className='hover:underline'>(028) 3914 2626</a> - <a href='tel:0813337444' className='hover:underline'>08 1333 7444</a></li>
+                  <li className='pt-7'>Trụ sở chính BETA: <a href='tel:02839142929' className='hover:underline'>(028) 3914 2929</a></li>
+                  <li className='pt-7'>Email: <a href='mailto:support@bsi.com.vn' className='hover:underline'>support@bsi.com.vn</a></li>
+                </ul>
+              </div>
+            </div>
+            <div className='w-[30%]'>
+              <div className='text-white text-2xl pt-16 font-[Montserrat] font-semibold'>Kết nối với chúng tôi</div>
+              <div className='flex justify-around w-[256px] pt-10'>
+                <a href='https://zalo.me/1623670409453822014' target="_blank"><Image src={IconZalo} alt='icon-zalo' className='w-[60px] h-[60px]' /></a>
+                <Image src={IconTele} alt='icon-tele' className='w-[60px] h-[60px]' />
+                <a href='https://www.bsi.com.vn/' target="_blank"><Image src={IconLogo} alt='icon-logo' className='w-[60px] h-[60px]' /></a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </footer>
+    </Fragment >
   );
 }
