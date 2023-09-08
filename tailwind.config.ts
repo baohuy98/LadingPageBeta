@@ -12,6 +12,7 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'solution-section': ' linear-gradient(139deg, #2270F0 0%, #1EC4FA 61.91%);',
+        'webInfo-section': ' linear-gradient(29deg, #0B548C 19.04%, #136AAE 55.46%, #1386DE 83.61%);',
       },
     },
     screens: {

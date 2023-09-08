@@ -1,4 +1,3 @@
-
 import Head from 'next/head'
 import Image from 'next/image'
 import { Fragment } from 'react'
@@ -12,6 +11,7 @@ import Phone from '../../public/assets/image/iphone-layout.png'
 import GifLaptop from '../../public/assets/image/section1.2.gif'
 import GifPhone from '../../public/assets/image/section1.1.gif'
 import TextB from '../../public/assets/image/B.png'
+import section2CSS from '../styles/section2.module.css'
 
 export default function Home() {
   return (
@@ -33,6 +33,7 @@ export default function Home() {
           content="B-Market, B-Info, B-Report, B-Signal, "
         />
         <link rel="canonical" href="https://www.example.com/your-page" />
+        <link rel="preload" href="https://resource.bsi.com.vn/resources/landing-page/background-section1.jpg" as="image" />
       </Head>
 
       <header className='h-[60px] flex justify-between items-center bg-[#154162] sticky top-0 z-50'>
@@ -63,11 +64,9 @@ export default function Home() {
         </div>
       </header>
       <main>
-
-        <section className='h-[945px] relative'>
-          <div className="bg-[url('../../public/assets/image/background-section1.jpg')] h-full bg-cover bg-center">
+        <section className='h-[945px] relative z-20'>
+          <div className="bg-[url('https://resource.bsi.com.vn/resources/landing-page/background-section1.jpg')] h-full bg-cover bg-center">
             <div className='absolute top-0 left-0 w-full h-full bg-black opacity-60'></div>
-
             <div className='relative z-10'>
               <div className='flex items-center'>
                 <div className='flex'>
@@ -97,23 +96,23 @@ export default function Home() {
               </div>
               <hr></hr>
             </div>
-
           </div>
         </section>
-        <section className='solution_section w-[1440px] h-[960px] relative'>
-          <div className='solution_section-left'>
-            <div className='bg-solution-section w-[1198px] h-[1316px] rounded-[100px] rotate-[20deg]'>
-              <div className='rotate-[-20deg]'>
-                <h2 className='font-bold text-white text-[65px] '>GIẢI PHÁP</h2>
-                <span>
-                  PHÂN TÍCH DỮ LIỆU TÀI CHÍNH & GIAO DỊCH TRONG THỜI ĐẠI 4.0
+        <section className='solution_section h-[1060px] relative z-10 '>
+          <div className='solution_section-left] translate-x-[-10%]'>
+            <div className='bg-solution-section w-[65%] h-[1316px] rounded-[100px] rotate-[8deg] flex flex-col justify-center  items-center '>
+              <div className='rotate-[-8deg] '>
+                <h2 className='font-bold text-white text-[55px] text-center mb-5 '>GIẢI PHÁP</h2>
+                <span className='font-semibold  text-white text-[65px]  '>
+                  PHÂN TÍCH DỮ LIỆU TÀI <br /> CHÍNH & GIAO DỊCH <br /> TRONG THỜI ĐẠI 4.0
                 </span>
               </div>
             </div>
           </div>
-          <div className="solution_section-right grid grid-cols-2 absolute bottom-[-40%] right-[-20%] gap-5  ">
-            <div className="item-card p-5 flex flex-col justify-between items-center relative z-10">
-              <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl"></div>
+          <div className="solution_section-right grid grid-cols-2 absolute top-[30%] right-[15%] gap-5  ">
+            <div className={`${section2CSS.itemCard} item-card p-8 flex flex-col justify-between items-center relative z-10 `}>
+              <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl">
+              </div>
               <Image
                 src={Item1}
                 alt="img-item1"
@@ -122,7 +121,7 @@ export default function Home() {
               ></Image>
               <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
             </div>
-            <div className="item-card p-5 flex flex-col justify-between items-center relative z-10">
+            <div className="item-card p-8 flex flex-col justify-between items-center relative z-10">
               <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl"></div>
               <Image
                 src={Item2}
@@ -130,9 +129,9 @@ export default function Home() {
                 width={215}
                 height={200}
               ></Image>
-              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
+              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Social Platform</span>
             </div>
-            <div className="item-card p-5 flex flex-col justify-between items-center relative z-10">
+            <div className="item-card p-8 flex flex-col justify-between items-center relative z-10">
               <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl"></div>
               <Image
                 src={Item3}
@@ -140,9 +139,9 @@ export default function Home() {
                 width={215}
                 height={200}
               ></Image>
-              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
+              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">AI Quick Report</span>
             </div>
-            <div className="item-card p-5 flex flex-col justify-between items-center relative z-10">
+            <div className="item-card p-8 flex flex-col justify-between items-center relative z-10">
               <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl"></div>
               <Image
                 src={Item4}
@@ -150,14 +149,15 @@ export default function Home() {
                 width={215}
                 height={200}
               ></Image>
-              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
+              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Market Tracker</span>
             </div>
 
-          </div>
+          </div>â
         </section>
-        <section></section>
+        <section className='webInfo_section bg-webInfo-section h-screen relative z-30 '></section>
         <section></section>
       </main>
     </Fragment>
   );
 }
+`  `
