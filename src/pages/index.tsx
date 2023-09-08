@@ -135,6 +135,7 @@ export default function Home() {
         {/* SECTION SOLUTION */}
         <section className='solution_section w-[1440px] h-screen relative z-10' id='solution_section'>
           <div className='solution_section-left rotate-[15deg] translate-x-[-13%] '>
+
             <div className={`bg-solution-section w-[80%] h-[1316px] rounded-[100px]  flex flex-col justify-center items-center animate__animated animate__rotateInDownLeft wow`}>
               <div className='h-fit rotate-[-15deg] translate-x-[15%] translate-y-[-15%] animate__animated animate__fadeIn'>
                 <h2 className='font-bold text-white text-[65px] text-center opacity-80 '>GIẢI PHÁP</h2>
@@ -145,10 +146,12 @@ export default function Home() {
             </div>
           </div>
           <div className="solution_section-right grid grid-cols-2 absolute top-[30%] right-[-10%] gap-y-5 gap-x-10  ">
+
             <div className={`item-card_1 p-5 flex flex-col justify-between items-center relative z-10 animate__animated animate__fadeInDown wow`}>
               <div className="absolute top-0 w-full h-full bg-white opacity-60 z-[-1] drop-shadow-md rounded-xl">
               </div>
               <Image
+                className={`${section2CSS.img}`}
                 src={Item1}
                 alt="img-item1"
               ></Image>
