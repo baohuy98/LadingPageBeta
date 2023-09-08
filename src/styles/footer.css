@@ -1,0 +1,7 @@
+.contact_section-title {
+    background: linear-gradient(180deg, #F90 0%, #FFD600 54.69%, #F9E26C 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Montserrat';
+}
