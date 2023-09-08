@@ -72,7 +72,7 @@ export default function Home() {
 
       {/* MAIN */}
       <main>
-        
+
         {/* SECTION B-SIGN */}
         <section className='bsign_section relative z-20 overflow-hidden'>
           <div className="bg-[url('https://resource.bsi.com.vn/resources/landing-page/background-section1.jpg')] h-full bg-cover bg-center">
@@ -120,11 +120,12 @@ export default function Home() {
             </div>
           </div>
         </section>
-        
+
         {/* SECTION SOLUTION */}
         <section className='solution_section w-[1440px] h-screen relative z-10'>
           <div className='solution_section-left rotate-[15deg] translate-x-[-13%] '>
             <div className={` bg-solution-section w-[80%] h-[1316px] rounded-[100px]  flex flex-col justify-center items-center animate__animated  animate__rotateInDownLeft  `}>
+
               <div className=' h-fit rotate-[-15deg]  translate-x-[15%] translate-y-[-15%] animate__animated animate__fadeIn'>
                 <h2 className='font-bold text-white text-[65px] text-center opacity-80 '>GIẢI PHÁP</h2>
                 <span className='font-bold text-white text-[65px]' >
@@ -134,10 +135,11 @@ export default function Home() {
             </div>
           </div>
           <div className="solution_section-right grid grid-cols-2 absolute top-[30%] right-[-10%] gap-y-5 gap-x-10  ">
-            <div className={`item-card_1 p-5 flex flex-col justify-between items-center relative z-10 animate__animated  animate__fadeInDown `}>
+            <div className={`item-card_1 p-5 flex flex-col justify-between items-center relative z-10 animate__animated  animate__fadeInDown wow `}>
               <div className="absolute top-0 w-full h-full bg-white opacity-60 z-[-1] drop-shadow-md rounded-xl">
               </div>
               <Image
+                className={`${section2CSS.img}`}
                 src={Item1}
                 alt="img-item1"
               ></Image>
@@ -170,7 +172,7 @@ export default function Home() {
 
           </div>
         </section>
-        
+
         {/* SECTION INFO */}
         <section className='webInfo_section bg-webInfo-section h-[750px] relative z-30'></section>
 
