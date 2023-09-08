@@ -11,8 +11,10 @@ import Phone from '../../public/assets/image/iphone-layout.png'
 import GifLaptop from '../../public/assets/image/section1.2.gif'
 import GifPhone from '../../public/assets/image/section1.1.gif'
 import TextB from '../../public/assets/image/B.png'
+import 'animate.css';
 
 export default function Home() {
+
   return (
     <Fragment>
       <Head>
@@ -23,7 +25,10 @@ export default function Home() {
         <meta name="keywords" content="đầu tư chứng khoán, thông tin chứng khoán, phân tích chứng khoán" />
         <meta name="keywords" content="B-Market, B-Info, B-Report, B-Signal, " />
         <link rel="canonical" href="https://www.example.com/your-page" />
+        <link rel="preload" href="https://resource.bsi.com.vn/resources/landing-page/background-section1.jpg" as="image" />
       </Head>
+
+      {/* HEADER */}
       <header className='h-[60px] flex justify-between items-center bg-[#154162] sticky top-0 z-50'>
         <div className='logo'>
           <Image src={Logo} alt='logo' ></Image>
@@ -31,13 +36,13 @@ export default function Home() {
         <div className='navbar'>
           <ul className="font-medium flex text-white">
             <li>
-              <a href="#" className="block py-2 px-9 font-semibold text-[21px]">Dịch vụ</a>
+              <a href="#" className="block py-2 lg:px-9 md:px-5 font-semibold text-[21px]">Dịch vụ</a>
             </li>
             <li>
-              <a href="#" className="block py-2 px-9 font-semibold text-[21px]">Sản phẩm</a>
+              <a href="#" className="block py-2 lg:px-9 md:px-5 font-semibold text-[21px]">Sản phẩm</a>
             </li>
             <li>
-              <a href="#" className="block py-2 px-9 font-semibold text-[21px]">Liên hệ</a>
+              <a href="#" className="block py-2 lg:px-9 md:px-5 font-semibold text-[21px]">Liên hệ</a>
             </li>
             <li>
               <button className="mx-5 my-1 block cssbuttons-io-button"><span>Sử dụng ngay</span></button>
@@ -45,44 +50,60 @@ export default function Home() {
           </ul>
         </div>
       </header>
+
+      {/* MAIN */}
       <main>
-        <section className='h-[945px] relative'>
-          <div className="bg-[url('../../public/assets/image/background-section1.jpg')] h-full bg-cover bg-center">
+
+        {/* SECTION B-SIGN */}
+        <section className='solution_bsign relative z-20'>
+          <div className="bg-[url('https://resource.bsi.com.vn/resources/landing-page/background-section1.jpg')] h-full bg-cover bg-center">
             <div className='absolute top-0 left-0 w-full h-full bg-black opacity-60'></div>
 
             <div className='relative z-10'>
-              <div className='flex items-center'>
-                <div className='flex'>
+              <div className='flex xl:flex-row lg:flex-col md:flex-col items-center justify-evenly p-[45px]'>
+                <div className='flex animate__animated animate__fadeInLeft animate__delay-1s'>
                   <Image src={TextB} alt='text-b' />
+
                   <div className='pl-3'>
                     <div className='text-sign'>
-                      <h2 className='text-[#FCB040] text-7xl font-bold'>Sign</h2>
+                      <h2 className='text-[#FCB040] text-8xl font-bold'>Sign</h2>
                     </div>
-                    <div className='text-content'>
-                      <h2 className='text-4xl font-bold'>Công cụ hỗ trợ đầu tư</h2>
-                      <h2 className='text-4xl font-bold'>Thông minh - An toàn - Tiện lợi</h2>
+
+                    <div className='text-content mt-5'>
+                      <div className='text-4xl font-bold h-[45px]'>Công cụ hỗ trợ đầu tư</div>
+                      <div className='text-4xl font-bold h-[45px]'>Thông minh - An toàn - Tiện lợi</div>
                     </div>
                   </div>
                 </div>
 
-                <div>
-                  <div className='relative translate-x-[270px] translate-y-[190px] w-fit z-20'>
+                <div className='animate__animated animate__fadeIn animate__slower'>
+                  <div className='relative translate-x-[270px] translate-y-[190px] w-fit z-30'>
                     <Image src={Phone} alt='phone' className='relative z-10' />
                     <Image src={GifPhone} alt='gif-phone' className='absolute top-[9px] left-[64px] w-[128px] h-[268px] rounded-xl z-0' />
                   </div>
+
                   <div className='relative w-fit'>
                     <Image src={Laptop} alt='laptop' />
                     <Image src={GifLaptop} alt='gif-laptop' className='absolute top-[14px] left-[48px] w-[355px] h-[211px]' />
                   </div>
                 </div>
-
               </div>
-              <hr></hr>
-            </div>
 
+              <div className='grid place-items-center'>
+                <div className='border-solid border-white border-b-2 border-t-0 border-x-0 w-[1515px] h-[3px]'></div>
+              </div>
+
+              <div className='grid place-items-center animate__animated animate__slideInUp animate__delay-1s'>
+                <div className='bsign-content xl:w-[1036px] lg:w-full p-[45px] text-[25px]'>
+                  “... với định hướng phát triển dựa trên hai giá trị cốt lõi là <span className='font-bold'>CON NGƯỜI</span> và <span className='font-bold'>CÔNG NGHỆ</span>, chúng tôi đang hoàn thành sứ mệnh cung cấp đến những <span className='font-bold'>Nhà đầu tư cá nhân</span> các giải pháp số hóa gần gũi, hiệu quả, dễ dàng tiếp cận và <span className='font-bold'>hoàn toàn miễn phí</span>...”
+                </div>
+              </div>
+            </div>
           </div>
         </section>
-        <section className='solution_section w-[1440px] h-[960px] relative'>
+
+        {/* SECTION SOLUTION */}
+        <section className='solution_section w-[1440px] h-[960px] relative z-10'>
           <div className='solution_section-left'>
             <div className='bg-solution-section w-[1198px] h-[1316px] rounded-[100px] rotate-[20deg]'>
               <div className='rotate-[-20deg]'>
