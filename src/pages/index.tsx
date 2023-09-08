@@ -1,4 +1,3 @@
-
 import Head from 'next/head'
 import Image from 'next/image'
 import { Fragment } from 'react'
@@ -12,6 +11,7 @@ import Phone from '../../public/assets/image/iphone-layout.png'
 import GifLaptop from '../../public/assets/image/section1.2.gif'
 import GifPhone from '../../public/assets/image/section1.1.gif'
 import TextB from '../../public/assets/image/B.png'
+import section2CSS from '../styles/section2.module.css'
 import 'animate.css';
 
 export default function Home() {
@@ -64,11 +64,11 @@ export default function Home() {
       {/* MAIN */}
       <main>
 
+
         {/* SECTION B-SIGN */}
         <section className='solution_bsign relative z-20'>
           <div className="bg-[url('https://resource.bsi.com.vn/resources/landing-page/background-section1.jpg')] h-full bg-cover bg-center">
             <div className='absolute top-0 left-0 w-full h-full bg-black opacity-60'></div>
-
             <div className='relative z-10'>
               <div className='flex xl:flex-row lg:flex-col md:flex-col items-center justify-evenly p-[45px]'>
                 <div className='flex animate__animated animate__fadeInLeft animate__delay-1s'>
@@ -103,6 +103,7 @@ export default function Home() {
                 <div className='border-solid border-white border-b-2 border-t-0 border-x-0 w-[1515px] h-[3px]'></div>
               </div>
 
+
               <div className='grid place-items-center animate__animated animate__slideInUp animate__delay-1s'>
                 <div className='bsign-content xl:w-[1036px] lg:w-full p-[45px] text-[25px]'>
                   “... với định hướng phát triển dựa trên hai giá trị cốt lõi là <span className='font-bold'>CON NGƯỜI</span> và <span className='font-bold'>CÔNG NGHỆ</span>, chúng tôi đang hoàn thành sứ mệnh cung cấp đến những <span className='font-bold'>Nhà đầu tư cá nhân</span> các giải pháp số hóa gần gũi, hiệu quả, dễ dàng tiếp cận và <span className='font-bold'>hoàn toàn miễn phí</span>...”
@@ -124,9 +125,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="solution_section-right grid grid-cols-2 absolute bottom-[-40%] right-[-20%] gap-5  ">
-            <div className="item-card p-5 flex flex-col justify-between items-center relative z-10">
-              <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl"></div>
+          <div className="solution_section-right grid grid-cols-2 absolute top-[30%] right-[15%] gap-5  ">
+            <div className={`${section2CSS.itemCard} item-card p-8 flex flex-col justify-between items-center relative z-10 `}>
+              <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl">
+              </div>
               <Image
                 src={Item1}
                 alt="img-item1"
@@ -135,7 +137,7 @@ export default function Home() {
               ></Image>
               <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
             </div>
-            <div className="item-card p-5 flex flex-col justify-between items-center relative z-10">
+            <div className="item-card p-8 flex flex-col justify-between items-center relative z-10">
               <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl"></div>
               <Image
                 src={Item2}
@@ -143,9 +145,9 @@ export default function Home() {
                 width={215}
                 height={200}
               ></Image>
-              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
+              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Social Platform</span>
             </div>
-            <div className="item-card p-5 flex flex-col justify-between items-center relative z-10">
+            <div className="item-card p-8 flex flex-col justify-between items-center relative z-10">
               <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl"></div>
               <Image
                 src={Item3}
@@ -153,9 +155,9 @@ export default function Home() {
                 width={215}
                 height={200}
               ></Image>
-              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
+              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">AI Quick Report</span>
             </div>
-            <div className="item-card p-5 flex flex-col justify-between items-center relative z-10">
+            <div className="item-card p-8 flex flex-col justify-between items-center relative z-10">
               <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl"></div>
               <Image
                 src={Item4}
@@ -163,14 +165,15 @@ export default function Home() {
                 width={215}
                 height={200}
               ></Image>
-              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
+              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Market Tracker</span>
             </div>
 
-          </div>
+          </div>â
         </section>
-        <section></section>
+        <section className='webInfo_section bg-webInfo-section h-screen relative z-30 '></section>
         <section></section>
       </main>
     </Fragment>
   );
 }
+`  `
