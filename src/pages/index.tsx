@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState, useRef } from 'react'
 import Logo from '../../public/assets/image/logo.png'
 import LogoColor from '../../public/assets/image/logo-color.png'
 import Item1 from '../../public/assets/image/item-1.png'
@@ -23,6 +23,7 @@ import section2CSS from '../styles/section2.module.css'
 import 'animate.css';
 
 export default function Home() {
+
 
   return (
     <Fragment>
@@ -71,8 +72,7 @@ export default function Home() {
 
       {/* MAIN */}
       <main>
-
-
+        
         {/* SECTION B-SIGN */}
         <section className='bsign_section relative z-20 overflow-hidden'>
           <div className="bg-[url('https://resource.bsi.com.vn/resources/landing-page/background-section1.jpg')] h-full bg-cover bg-center">
@@ -112,66 +112,58 @@ export default function Home() {
               </div>
 
 
-              <div className='grid place-items-center animate__animated animate__slideInUp animate__delay-1s'>
-                <div className='bsign-content xl:w-[1036px] lg:w-full p-[45px] text-[25px]'>
+              <div className='grid place-items-center animate__animated animate__slideInUp animate__delay-1s '>
+                <div className='bsign-content xl:w-[1036px] lg:w-full p-[45px] text-[25px] overflow-hidden'>
                   “... với định hướng phát triển dựa trên hai giá trị cốt lõi là <span className='font-bold'>CON NGƯỜI</span> và <span className='font-bold'>CÔNG NGHỆ</span>, chúng tôi đang hoàn thành sứ mệnh cung cấp đến những <span className='font-bold'>Nhà đầu tư cá nhân</span> các giải pháp số hóa gần gũi, hiệu quả, dễ dàng tiếp cận và <span className='font-bold'>hoàn toàn miễn phí</span>...”
                 </div>
               </div>
             </div>
           </div>
         </section>
-
+        
         {/* SECTION SOLUTION */}
-        <section className='solution_section w-[1440px] h-[960px] relative z-10'>
-          <div className='solution_section-left'>
-            <div className='bg-solution-section w-[1198px] h-[1316px] rounded-[100px] rotate-[20deg]'>
-              <div className='rotate-[-20deg]'>
-                <h2 className='font-bold text-white text-[65px] '>GIẢI PHÁP</h2>
-                <span>
-                  PHÂN TÍCH DỮ LIỆU TÀI CHÍNH & GIAO DỊCH TRONG THỜI ĐẠI 4.0
+        <section className='solution_section w-[1440px] h-screen relative z-10'>
+          <div className='solution_section-left rotate-[15deg] translate-x-[-13%] '>
+            <div className={` bg-solution-section w-[80%] h-[1316px] rounded-[100px]  flex flex-col justify-center items-center animate__animated  animate__rotateInDownLeft  `}>
+              <div className=' h-fit rotate-[-15deg]  translate-x-[15%] translate-y-[-15%] animate__animated animate__fadeIn'>
+                <h2 className='font-bold text-white text-[65px] text-center opacity-80 '>GIẢI PHÁP</h2>
+                <span className='font-bold text-white text-[65px]' >
+                  PHÂN TÍCH DỮ LIỆU TÀI <br /> CHÍNH & GIAO DỊCH  <br /> TRONG THỜI ĐẠI 4.0
                 </span>
               </div>
             </div>
           </div>
-          <div className="solution_section-right grid grid-cols-2 absolute top-[30%] right-[15%] gap-5  ">
-            <div className={`${section2CSS.itemCard} item-card p-8 flex flex-col justify-between items-center relative z-10 `}>
-              <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl">
+          <div className="solution_section-right grid grid-cols-2 absolute top-[30%] right-[-10%] gap-y-5 gap-x-10  ">
+            <div className={`item-card_1 p-5 flex flex-col justify-between items-center relative z-10 animate__animated  animate__fadeInDown `}>
+              <div className="absolute top-0 w-full h-full bg-white opacity-60 z-[-1] drop-shadow-md rounded-xl">
               </div>
               <Image
                 src={Item1}
                 alt="img-item1"
-                width={215}
-                height={200}
               ></Image>
               <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
             </div>
-            <div className="item-card p-8 flex flex-col justify-between items-center relative z-10">
-              <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl"></div>
+            <div className={` item-card_2 p-5 flex flex-col justify-between items-center relative z-10 animate__animated  animate__fadeInDown `}>
+              <div className="absolute top-0 w-full h-full bg-white opacity-60 z-[-1] drop-shadow-md rounded-xl"></div>
               <Image
                 src={Item2}
                 alt="img-item1"
-                width={215}
-                height={200}
               ></Image>
               <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Social Platform</span>
             </div>
-            <div className="item-card p-8 flex flex-col justify-between items-center relative z-10">
-              <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl"></div>
+            <div className={` item-card_3 p-5 flex flex-col justify-between items-center relative z-10 animate__animated animate__fadeInUp `}>
+              <div className="absolute top-0 w-full h-full bg-white opacity-60 z-[-1] drop-shadow-md rounded-xl"></div>
               <Image
                 src={Item3}
                 alt="img-item1"
-                width={215}
-                height={200}
               ></Image>
               <span className="text-[#01A7FB] font-bold text-[30px] mt-5">AI Quick Report</span>
             </div>
-            <div className="item-card p-8 flex flex-col justify-between items-center relative z-10">
-              <div className="absolute top-0 w-full h-full bg-white opacity-70 z-[-1] drop-shadow-md rounded-xl"></div>
+            <div className={` item-card_4 p-5 flex flex-col justify-between items-center relative z-10 animate__animated animate__fadeInUp `}>
+              <div className="absolute top-0 w-full h-full bg-white opacity-60 z-[-1] drop-shadow-md rounded-xl"></div>
               <Image
                 src={Item4}
                 alt="img-item1"
-                width={215}
-                height={200}
               ></Image>
               <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Market Tracker</span>
             </div>
