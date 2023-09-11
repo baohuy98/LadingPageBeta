@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import '@/styles/bsignSection.css'
 import '@/styles/bmarketSection.css'
+import '@/styles/infoSection.css'
 import '@/styles/bsignalSection.css'
 import '@/styles/footer.css'
 

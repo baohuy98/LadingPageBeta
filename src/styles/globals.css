@@ -16,6 +16,10 @@
   }
 }
 
+svg {
+  display: inline;
+}
+
 /* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -42,3 +46,4 @@
 .animate__animated.animate__fadeInUp {
   --animate-duration: 1.5s;
 }
+

@@ -20,21 +20,62 @@ import IconLogo from '../../public/assets/image/icon-logo.png'
 import IconTele from '../../public/assets/image/icon-tele.png'
 import IconZalo from '../../public/assets/image/icon-zalo.png'
 import section2CSS from '../styles/section2.module.css'
+import BInfoTablet from '../../public/assets/image/b-info-tablet.png'
+
 import Item1Hover from '../../public/assets/image/itemHover-1.png'
 import Item2Hover from '../../public/assets/image/itemHover-2.png'
 import Item3Hover from '../../public/assets/image/itemHover-3.png'
 import Item4Hover from '../../public/assets/image/itemHover-4.png'
 import { AiOutlineArrowRight } from "react-icons/ai";
+
 import 'animate.css';
 
 const isServer = typeof window === 'undefined'
 const WOW = !isServer ? require('wowjs') : null
 
 export default function Home() {
+
+  const [slideIndex, setSlideIndex] = useState(1);
+  const plusSlides = (n: number) => {
+    setSlideIndex(slideIndex + n)
+    showSlides(slideIndex + n);
+  }
+
+  const currentSlide = (n: number) => {
+    showSlides(n);
+    setSlideIndex(n)
+  }
+
+  const showSlides = (n: number) => {
+    let i;
+    const slides = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>;
+    const rectangles = document.getElementsByClassName("rectangle") as HTMLCollectionOf<HTMLElement>;
+
+    if (n > slides.length) { setSlideIndex(1); }
+    if (n < 1) { setSlideIndex(slides.length); }
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    for (i = 0; i < rectangles.length; i++) {
+      rectangles[i].className = rectangles[i].className.replace(" active", "");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    rectangles[slideIndex - 1].className += " active";
+  }
+
+  useEffect(() => {
+    showSlides(slideIndex);
+  }, [slideIndex]);
+
+
   const [isHoveredImg1, setIsHoveredImg1] = useState(false)
   const [isHoveredImg2, setIsHoveredImg2] = useState(false)
   const [isHoveredImg3, setIsHoveredImg3] = useState(false)
   const [isHoveredImg4, setIsHoveredImg4] = useState(false)
+
   useEffect(() => {
     if (!isServer && WOW) {
       const wow = new WOW.WOW({
@@ -283,7 +324,104 @@ export default function Home() {
         </section>
 
         {/* SECTION INFO */}
-        <section className='webInfo_section bg-webInfo-section h-[750px] relative z-30'></section>
+        <section className='webInfo_section bg-webInfo-section h-[750px] relative z-30 overflow-hidden'>
+          <div className='grid grid-cols-2'>
+            <div className='grid place-items-center'>
+              <div className='h-[580px]'>
+                <Image src={BInfoTablet} alt='b-info-tablet' className='w-[310px] h-[292px]' />
+
+              </div>
+
+              <div className='flex items-center'>
+                <a className="prev" onClick={() => plusSlides(-1)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="12" viewBox="0 0 35 12" fill="none">
+                    <path d="M35 7.32203L5.41118 7.32203V12L0 5.89831L5.41118 0V4.47458L35 4.47458V7.32203Z" fill="#D9D9D9" />
+                  </svg>
+                </a>
+                <span className="rectangle" onClick={() => currentSlide(1)}></span>
+                <span className="rectangle" onClick={() => currentSlide(2)}></span>
+                <span className="rectangle" onClick={() => currentSlide(3)}></span>
+                <span className="rectangle" onClick={() => currentSlide(4)}></span>
+                <a className="next" onClick={() => plusSlides(1)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="12" viewBox="0 0 35 12" fill="none">
+                    <path d="M0 4.67797H29.5888V0L35 6.10169L29.5888 12V7.52542H0V4.67797Z" fill="#D9D9D9" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div className='slideshow-container'>
+              <div className='mySlides animate__animated animate__slideInRight'>
+                <div className='text-white pt-[125px]'>
+                  <h2 className='text-5xl font-bold ml-2'>Web Platform  B-Info</h2>
+                  <p className='text-2xl font-bold pt-[50px]'>
+                    Nền tảng hỗ trợ đầu tư MIỄN PHÍ
+                    <br></br>
+                    Dễ dàng truy cập MỌI LÚC, MỌI NƠI
+                  </p>
+                  <ul className='list-disc pt-5 text-xl ml-9'>
+                    <li className='pt-5'>Phân tích toàn diện và chuyên sâu về doanh nghiệp, thị trường.</li>
+                    <li className='pt-5'>Cập nhật dữ liệu liên tục theo thời gian thực.</li>
+                    <li className='pt-5'>Cung cấp thông tin thị trường trong và ngoài nước.</li>
+                    <li className='pt-5'>Giao diện trực quan, trải nghiệm dễ dàng.</li>
+                    <li className='pt-5'>Truy cập miễn phí toàn bộ công cụ hỗ trợ đầu tư.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className='mySlides animate__animated animate__slideInRight'>
+                <div className='text-white pt-[125px]'>
+                  <h2 className='text-5xl font-bold ml-2'>Dữ liệu vĩ mô đa dạng</h2>
+                  <p className='text-2xl font-bold pt-[50px]'>
+                    Thông tin, dữ liệu kinh tế vĩ mô Việt Nam và thế giới
+                    <br></br>
+                    Cập nhật nhanh về thị trường, phân tích sâu về kinh tế
+                  </p>
+                  <ul className='list-disc pt-5 text-xl ml-9'>
+                    <li className='pt-5'>Biểu đồ và đồ thị sinh động, dễ dàng nhìn thấy xu hướng thị trường.</li>
+                    <li className='pt-5'>Xây dựng kiến thức về tài chính và kinh tế với các chỉ số quan trọng.</li>
+                    <li className='pt-5'>Đa dạng hóa danh mục đầu tư và giảm thiểu rủi ro từ nguồn thông tin đáng tin cậy.</li>
+                    <li className='pt-5'>Đưa ra các yếu tố ảnh hưởng, điều chỉnh chiến lược đầu tư.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className='mySlides animate__animated animate__slideInRight'>
+                <div className='text-white pt-[125px]'>
+                  <h2 className='text-5xl font-bold ml-2'>Tổng quan cổ phiếu</h2>
+                  <p className='text-2xl font-bold pt-[50px]'>
+                    Tra cứu cổ phiếu nhanh chóng
+                    <br></br>
+                    Thông tin toàn diện, chính xác
+                  </p>
+                  <ul className='list-disc pt-5 text-xl ml-9'>
+                    <li className='pt-5'>Phân tích chuyên sâu về biến động giá, chỉ số tài chính và sự kiện ảnh hưởng.</li>
+                    <li className='pt-5'>Thống kê chi tiết các giao dịch, yếu tố ảnh hưởng trực tiếp đến cổ phiếu.</li>
+                    <li className='pt-5'>Tiết kiệm thời gian khi tra cứu báo cáo tài chính doanh nghiệp.</li>
+                    <li className='pt-5'>Được tiếp cận đa dạng và phong phú thông tin về doanh nghiệp.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className='mySlides animate__animated animate__slideInRight'>
+                <div className='text-white pt-[125px]'>
+                  <h2 className='text-5xl font-bold ml-2'>Công cụ đầu tư tiện lợi</h2>
+                  <p className='text-2xl font-bold pt-[50px]'>
+                    Công cụ hỗ trợ đầu tư độc quyền
+                    <br></br>
+                    Hiệu suất sinh lời vượt trội và ổn định
+                  </p>
+                  <ul className='list-disc pt-5 text-xl ml-9'>
+                    <li className='pt-5'>Bộ lọc tìm kiếm tối ưu hóa việc tìm kiếm và đánh giá cổ phiếu theo tiêu chí.</li>
+                    <li className='pt-5'>Công cụ giả lập đầu tư kiểm tra, phân tích và tối ưu chiến lược đầu tư.</li>
+                    <li className='pt-5'>Công cụ thông minh theo dõi chuyển động thị trường, hỗ trợ phân bổ đầu tư</li>
+                    <li className='pt-5'>Phân tích danh mục hỗ trợ quản lý rủi ro, tối đa hóa lợi nhuận.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* SECTION B-MARKET */}
         <section className='bmarket_section'>
