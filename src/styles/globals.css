@@ -35,3 +35,15 @@ svg {
   margin: 0;
   padding: 0;
 }
+
+.animate__animated.animate__rotateInDownLeft {
+  --animate-duration: 1.5s;
+}
+.animate__animated.animate__fadeInDown {
+  --animate-duration: 1.5s;
+}
+
+.animate__animated.animate__fadeInUp {
+  --animate-duration: 1.5s;
+}
+

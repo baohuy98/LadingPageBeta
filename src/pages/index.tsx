@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Fragment, useEffect, useState, useRef } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import Logo from '../../public/assets/image/logo.png'
 import LogoColor from '../../public/assets/image/logo-color.png'
 import Item1 from '../../public/assets/image/item-1.png'
@@ -21,14 +21,21 @@ import IconTele from '../../public/assets/image/icon-tele.png'
 import IconZalo from '../../public/assets/image/icon-zalo.png'
 import section2CSS from '../styles/section2.module.css'
 import BInfoTablet from '../../public/assets/image/b-info-tablet.png'
+
+import Item1Hover from '../../public/assets/image/itemHover-1.png'
+import Item2Hover from '../../public/assets/image/itemHover-2.png'
+import Item3Hover from '../../public/assets/image/itemHover-3.png'
+import Item4Hover from '../../public/assets/image/itemHover-4.png'
+import { AiOutlineArrowRight } from "react-icons/ai";
+
 import 'animate.css';
 
 const isServer = typeof window === 'undefined'
 const WOW = !isServer ? require('wowjs') : null
 
 export default function Home() {
-  const [slideIndex, setSlideIndex] = useState(1);
 
+  const [slideIndex, setSlideIndex] = useState(1);
   const plusSlides = (n: number) => {
     setSlideIndex(slideIndex + n)
     showSlides(slideIndex + n);
@@ -63,6 +70,12 @@ export default function Home() {
     showSlides(slideIndex);
   }, [slideIndex]);
 
+
+  const [isHoveredImg1, setIsHoveredImg1] = useState(false)
+  const [isHoveredImg2, setIsHoveredImg2] = useState(false)
+  const [isHoveredImg3, setIsHoveredImg3] = useState(false)
+  const [isHoveredImg4, setIsHoveredImg4] = useState(false)
+
   useEffect(() => {
     if (!isServer && WOW) {
       const wow = new WOW.WOW({
@@ -71,6 +84,7 @@ export default function Home() {
       wow.init();
     }
   }, [])
+
 
   return (
     <Fragment>
@@ -118,7 +132,7 @@ export default function Home() {
       </header>
 
       {/* MAIN */}
-      <main>
+      <main className=''>
 
         {/* SECTION B-SIGN */}
         <section className='bsign_section relative z-20 overflow-hidden'>
@@ -169,7 +183,7 @@ export default function Home() {
         </section>
 
         {/* SECTION SOLUTION */}
-        <section className='solution_section w-[1440px] h-screen relative z-10' id='solution_section'>
+        <section className='solution_section w-[1440px] h-screen relative z-10' id='solution_section '>
           <div className='solution_section-left rotate-[15deg] translate-x-[-13%] '>
             <div className={`bg-solution-section w-[80%] h-[1316px] rounded-[100px]  flex flex-col justify-center items-center animate__animated animate__rotateInDownLeft wow`}>
               <div className='h-fit rotate-[-15deg] translate-x-[15%] translate-y-[-15%] animate__animated animate__fadeIn'>
@@ -181,40 +195,131 @@ export default function Home() {
             </div>
           </div>
           <div className="solution_section-right grid grid-cols-2 absolute top-[30%] right-[-10%] gap-y-5 gap-x-10  ">
-            <div className={`item-card_1 p-5 flex flex-col justify-between items-center relative z-10 animate__animated animate__fadeInDown wow`}>
-              <div className="absolute top-0 w-full h-full bg-white opacity-60 z-[-1] drop-shadow-md rounded-xl">
-              </div>
-              <Image
-                src={Item1}
-                alt="img-item1"
-              ></Image>
-              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
-            </div>
-            <div className={`item-card_2 p-5 flex flex-col justify-between items-center relative z-10 animate__animated animate__fadeInDown wow`}>
-              <div className="absolute top-0 w-full h-full bg-white opacity-60 z-[-1] drop-shadow-md rounded-xl"></div>
-              <Image
-                src={Item2}
-                alt="img-item1"
-              ></Image>
-              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Social Platform</span>
-            </div>
-            <div className={`item-card_3 p-5 flex flex-col justify-between items-center relative z-10 animate__animated animate__fadeInUp wow`}>
-              <div className="absolute top-0 w-full h-full bg-white opacity-60 z-[-1] drop-shadow-md rounded-xl"></div>
-              <Image
-                src={Item3}
-                alt="img-item1"
-              ></Image>
-              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">AI Quick Report</span>
-            </div>
-            <div className={`item-card_4 p-5 flex flex-col justify-between items-center relative z-10 animate__animated animate__fadeInUp wow`}>
-              <div className="absolute top-0 w-full h-full bg-white opacity-60 z-[-1] drop-shadow-md rounded-xl"></div>
-              <Image
-                src={Item4}
-                alt="img-item1"
-              ></Image>
-              <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Market Tracker</span>
+            <div
+              onMouseOver={() => {
+                setIsHoveredImg1(true)
+              }}
+              onMouseOut={() => {
+                setIsHoveredImg1(false)
+              }} className={` item-card_1  z-10 animate__animated animate__fadeInDown wow`}>
+              {!isHoveredImg1 ?
+                <div className={`${section2CSS.item_cardBackground}   w-[305px]  flex flex-col justify-between items-center    relative p-5`}>
+                  <Image
+                    src={Item1}
+                    width={200}
+                    height={150}
+                    alt="img-item1"
+                  ></Image>
+                  <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
+                </div>
+                :
+                <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover1} ${isHoveredImg1 ? 'animate__animated animate__fadeIn' : ''} h-[305px] relative`}>
+                  <div className='flex flex-col justify-between items-center h-full  p-5  ' >
+                    <h1 className='text-[#FEBC08] text-[40px] font-bold'>
+                      B-Info
+                    </h1>
+                    <span className='text-[20px] font-semibold text-white'>Webapp đầy đủ và toàn diện <br /> với các công cụ hỗ trợ phân <br /> tích dữ & quan sát thị trường</span>
+                    <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
+                      <a className='mr-2' href="https://binfo.bsi.com.vn/" target='_blank'>Xem thêm  </a>
+                      <AiOutlineArrowRight />
+                    </div>
+                  </div>
+                </div>
+              }
             </div>
 
+            <div onMouseOver={() => {
+              setIsHoveredImg2(true)
+            }} onMouseOut={() => {
+              setIsHoveredImg2(false)
+            }} className={` item-card_2  z-10 animate__animated animate__fadeInDown wow`}>
+              {!isHoveredImg2 ?
+                <div className={`${section2CSS.item_cardBackground}  w-[305px]  flex flex-col justify-between items-center    relative p-5`}>
+                  <Image
+                    src={Item2}
+                    width={200}
+                    height={150}
+                    alt="img-item1"
+                  ></Image>
+                  <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
+                </div>
+                :
+                <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover2} ${isHoveredImg2 ? 'animate__animated animate__fadeIn' : ''} h-[305px] relative`}>
+                  <div className='flex flex-col justify-between items-center h-full  p-5  ' >
+                    <h1 className='text-[#FEBC08] text-[40px] font-bold'>
+                      B-Info
+                    </h1>
+                    <span className='text-[20px] font-semibold text-white'>Webapp đầy đủ và toàn diện <br /> với các công cụ hỗ trợ phân <br /> tích dữ & quan sát thị trường</span>
+                    <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
+                      <a className='mr-2' href="https://binfo.bsi.com.vn/" target='_blank'>Xem thêm  </a>
+                      <AiOutlineArrowRight />
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+
+            <div onMouseOver={() => {
+              setIsHoveredImg3(true)
+            }} onMouseOut={() => {
+              setIsHoveredImg3(false)
+            }} className={` item-card_3 z-10 animate__animated animate__fadeInUp wow`}>
+              {!isHoveredImg3 ?
+                <div className={`${section2CSS.item_cardBackground}  w-[305px]  flex flex-col justify-between items-center    relative p-5`}>
+                  <Image
+                    src={Item3}
+                    width={200}
+                    height={150}
+                    alt="img-item1"
+                  ></Image>
+                  <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
+                </div>
+                :
+                <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover3} ${isHoveredImg3 ? 'animate__animated animate__fadeIn' : ''} h-[305px] relative`}>
+                  <div className='flex flex-col justify-between items-center h-full  p-5  ' >
+                    <h1 className='text-[#FEBC08] text-[40px] font-bold'>
+                      B-Info
+                    </h1>
+                    <span className='text-[20px] font-semibold text-white'>Webapp đầy đủ và toàn diện <br /> với các công cụ hỗ trợ phân <br /> tích dữ & quan sát thị trường</span>
+                    <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
+                      <a className='mr-2' href="https://binfo.bsi.com.vn/" target='_blank'>Xem thêm  </a>
+                      <AiOutlineArrowRight />
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+
+            <div onMouseOver={() => {
+              setIsHoveredImg4(true)
+            }} onMouseOut={() => {
+              setIsHoveredImg4(false)
+            }} className={` item-card_4 z-10 animate__animated animate__fadeInUp wow`}>
+              {!isHoveredImg4 ?
+                <div className={`${section2CSS.item_cardBackground}  w-[305px]  flex flex-col justify-between items-center    relative p-5`}>
+                  <Image
+                    src={Item4}
+                    width={200}
+                    height={150}
+                    alt="img-item1"
+                  ></Image>
+                  <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
+                </div>
+                :
+                <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover3} ${isHoveredImg4 ? 'animate__animated animate__fadeIn' : ''} h-[305px] relative`}>
+                  <div className='flex flex-col justify-between items-center h-full  p-5  ' >
+                    <h1 className='text-[#FEBC08] text-[40px] font-bold'>
+                      B-Info
+                    </h1>
+                    <span className='text-[20px] font-semibold text-white'>Webapp đầy đủ và toàn diện <br /> với các công cụ hỗ trợ phân <br /> tích dữ & quan sát thị trường</span>
+                    <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
+                      <a className='mr-2' href="https://binfo.bsi.com.vn/" target='_blank'>Xem thêm  </a>
+                      <AiOutlineArrowRight />
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
           </div>
         </section>
 
