@@ -108,9 +108,9 @@ export default function Home() {
   }
 
   useEffect(() => {
-    // showSlides(slideIndex);
-    // showSlidesImg(slideIndexImg);
-    // showSlidesImg2(slideIndexImg2);
+    showSlides(slideIndex);
+    showSlidesImg(slideIndexImg);
+    showSlidesImg2(slideIndexImg2);
   }, [slideIndex, slideIndexImg, slideIndexImg2]);
 
   const [isHoveredImg1, setIsHoveredImg1] = useState(false)
