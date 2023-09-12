@@ -30,10 +30,6 @@ import BInfoMobile1 from '../../public/assets/image/b-info1-mobile.png'
 import BInfoMobile2 from '../../public/assets/image/b-info2-mobile.png'
 import BInfoMobile3 from '../../public/assets/image/b-info3-mobile.png'
 import BInfoMobile4 from '../../public/assets/image/b-info4-mobile.png'
-import Item1Hover from '../../public/assets/image/itemHover-1.png'
-import Item2Hover from '../../public/assets/image/itemHover-2.png'
-import Item3Hover from '../../public/assets/image/itemHover-3.png'
-import Item4Hover from '../../public/assets/image/itemHover-4.png'
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 import 'animate.css';
