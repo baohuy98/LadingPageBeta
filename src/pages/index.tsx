@@ -225,7 +225,7 @@ export default function Home() {
         </section>
 
         {/* SECTION SOLUTION */}
-        <section className='solution_section w-[1440px] h-screen relative z-10' id='solution_section '>
+        <section className='solution_section w-[1440px] h-[960px] relative z-10' id='solution_section'>
           <div className='solution_section-left rotate-[15deg] translate-x-[-13%] '>
             <div className={`bg-solution-section w-[80%] h-[1316px] rounded-[100px]  flex flex-col justify-center items-center animate__animated animate__rotateInDownLeft wow`}>
               <div className='h-fit rotate-[-15deg] translate-x-[15%] translate-y-[-15%] animate__animated animate__fadeIn'>
@@ -236,7 +236,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="solution_section-right grid grid-cols-2 absolute top-[30%] right-[-10%] gap-y-5 gap-x-10  ">
+          <div className="solution_section-right grid grid-cols-2 absolute top-[30%] right-[-10%] gap-y-5 gap-x-10">
             <div
               onMouseOver={() => {
                 setIsHoveredImg1(true)
@@ -245,7 +245,7 @@ export default function Home() {
                 setIsHoveredImg1(false)
               }} className={` item-card_1  z-10 animate__animated animate__fadeInDown wow`}>
               {!isHoveredImg1 ?
-                <div className={`${section2CSS.item_cardBackground}   w-[305px]  flex flex-col justify-between items-center    relative p-5`}>
+                <div className={`${section2CSS.item_cardBackground} w-[305px] flex flex-col justify-between items-center relative p-5`}>
                   <Image
                     src={Item1}
                     width={200}
@@ -276,7 +276,7 @@ export default function Home() {
               setIsHoveredImg2(false)
             }} className={` item-card_2  z-10 animate__animated animate__fadeInDown wow`}>
               {!isHoveredImg2 ?
-                <div className={`${section2CSS.item_cardBackground}  w-[305px]  flex flex-col justify-between items-center    relative p-5`}>
+                <div className={`${section2CSS.item_cardBackground} w-[305px] flex flex-col justify-between items-center relative p-5`}>
                   <Image
                     src={Item2}
                     width={200}
@@ -307,7 +307,7 @@ export default function Home() {
               setIsHoveredImg3(false)
             }} className={` item-card_3 z-10 animate__animated animate__fadeInUp wow`}>
               {!isHoveredImg3 ?
-                <div className={`${section2CSS.item_cardBackground}  w-[305px]  flex flex-col justify-between items-center    relative p-5`}>
+                <div className={`${section2CSS.item_cardBackground} w-[305px] flex flex-col justify-between items-center relative p-5`}>
                   <Image
                     src={Item3}
                     width={200}
@@ -338,7 +338,7 @@ export default function Home() {
               setIsHoveredImg4(false)
             }} className={` item-card_4 z-10 animate__animated animate__fadeInUp wow`}>
               {!isHoveredImg4 ?
-                <div className={`${section2CSS.item_cardBackground}  w-[305px]  flex flex-col justify-between items-center    relative p-5`}>
+                <div className={`${section2CSS.item_cardBackground} w-[305px] flex flex-col justify-between items-center relative p-5`}>
                   <Image
                     src={Item4}
                     width={200}
