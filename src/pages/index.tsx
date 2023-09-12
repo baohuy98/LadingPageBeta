@@ -31,7 +31,6 @@ import BInfoMobile2 from '../../public/assets/image/b-info2-mobile.png'
 import BInfoMobile3 from '../../public/assets/image/b-info3-mobile.png'
 import BInfoMobile4 from '../../public/assets/image/b-info4-mobile.png'
 import { AiOutlineArrowRight } from "react-icons/ai";
-
 import 'animate.css';
 
 const isServer = typeof window === 'undefined'
@@ -113,7 +112,6 @@ export default function Home() {
     showSlidesImg(slideIndexImg);
     showSlidesImg2(slideIndexImg2);
   }, [slideIndex, slideIndexImg, slideIndexImg2]);
-
 
   const [isHoveredImg1, setIsHoveredImg1] = useState(false)
   const [isHoveredImg2, setIsHoveredImg2] = useState(false)
@@ -293,7 +291,7 @@ export default function Home() {
                     </h1>
                     <span className='text-[20px] font-semibold text-white'>Sự tiện lợi giành cho những <br /> Nhà đầu tư bận rộn  chatbot <br />  tự động hoàn toàn, dữ liệu <br /> Real-time trên nền tảng Zalo <br /> và Telegram</span>
                     <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
-                      <a className='mr-2' href="https://binfo.bsi.com.vn/" target='_blank'>Xem thêm  </a>
+                      <a className='mr-2' href="#bmarket_section">Xem thêm  </a>
                       <AiOutlineArrowRight />
                     </div>
                   </div>
@@ -324,7 +322,7 @@ export default function Home() {
                     </h1>
                     <span className='text-[20px] font-semibold text-white'>Hệ thống AI phản hồi báo <br /> cáo đa dạng, trực quan, <br /> nhanh chóng về giao dịch <br /> thị trường & doanh nghiệp.</span>
                     <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
-                      <a className='mr-2' href="https://binfo.bsi.com.vn/" target='_blank'>Xem thêm  </a>
+                      <a className='mr-2' href="#breport_section">Xem thêm  </a>
                       <AiOutlineArrowRight />
                     </div>
                   </div>
@@ -355,7 +353,7 @@ export default function Home() {
                     </h1>
                     <span className='text-[20px] font-semibold text-white'>Hệ thống tín hiệu theo dõi & <br /> thông báo cập nhật mọi <br /> biến động thị trường</span>
                     <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
-                      <a className='mr-2' href="https://binfo.bsi.com.vn/" target='_blank'>Xem thêm  </a>
+                      <a className='mr-2' href="#bsignal_section">Xem thêm  </a>
                       <AiOutlineArrowRight />
                     </div>
                   </div>
@@ -374,7 +372,7 @@ export default function Home() {
                   <Image src={BInfoTablet} alt='b-info-tablet' className='w-[278px] h-[292px]' />
                 </div>
 
-                <div className='relative top-[-170px] left-[320px] z-20'>
+                <div className='relative z-20 top-[-170px] left-[320px]'>
                   <Image src={Laptop} alt='laptop' className='relative z-10' />
                   <div className='absolute top-[11px] left-[54px] w-[350px] overflow-hidden flex'>
                     <Image src={BInfo1} alt='b-info1' className='mySlides-img animate__animated animate__slideInRight rounded-lg w-[350px]' />
@@ -487,7 +485,7 @@ export default function Home() {
         </section>
 
         {/* SECTION B-MARKET */}
-        <section className='bmarket_section'>
+        <section className='bmarket_section' id='bmarket_section'>
           <div className='grid grid-cols-2'>
             <div className='px-[160px] py-[60px]'>
               <h2 className='bmarket_section-title'>B- Market : Môi giới Số cho Nhà đầu tư </h2>
@@ -546,10 +544,10 @@ export default function Home() {
         </section>
 
         {/* SECTION B-REPORT */}
-        <section className='breport_section bg-breport-section h-[750px] relative z-30'></section>
+        <section className='breport_section bg-breport-section h-[750px] relative z-30' id='breport_section'></section>
 
         {/* SECTION B-SIGNAL */}
-        <section className='bsignal_section relative'>
+        <section className='bsignal_section relative' id='bsignal_section'>
           <div className='grid grid-cols-2'>
             <div>
               <h2 className='bsignal_section-title pt-[99px]'>Tránh bỏ lỡ những biến <br></br> động thị trường cùng hệ<br></br> thống cảnh báo B-Signal</h2>
@@ -656,6 +654,6 @@ export default function Home() {
           </div>
         </section>
       </footer>
-    </Fragment >
+    </Fragment>
   );
 }
