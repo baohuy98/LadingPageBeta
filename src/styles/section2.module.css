@@ -27,26 +27,23 @@
   background: url(../../public//assets/image/itemHover-1.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100%;
 }
 .item_cardBackgroundHover2 {
   background: url(../../public//assets/image/itemHover-2.png);
   background-position: center;
-  object-fit: cover;
   background-repeat: no-repeat;
-  background-size: 90%;
+  background-size: 100%;
 }
 .item_cardBackgroundHover3 {
   background: url(../../public//assets/image/itemHover-3.png);
   background-position: center;
-  object-fit: cover;
   background-repeat: no-repeat;
   background-size: 100%;
 }
 .item_cardBackgroundHover4 {
   background: url(../../public//assets/image/itemHover-4.png);
   background-position: center;
-  object-fit: cover;
   background-repeat: no-repeat;
   background-size: 100%;
 }

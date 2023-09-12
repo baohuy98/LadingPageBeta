@@ -283,15 +283,15 @@ export default function Home() {
                     height={150}
                     alt="img-item1"
                   ></Image>
-                  <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
+                  <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Social Platform</span>
                 </div>
                 :
                 <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover2} ${isHoveredImg2 ? 'animate__animated animate__fadeIn' : ''} h-[305px] relative`}>
                   <div className='flex flex-col justify-between items-center h-full  p-5  ' >
                     <h1 className='text-[#FEBC08] text-[40px] font-bold'>
-                      B-Info
+                      B-Market
                     </h1>
-                    <span className='text-[20px] font-semibold text-white'>Webapp đầy đủ và toàn diện <br /> với các công cụ hỗ trợ phân <br /> tích dữ & quan sát thị trường</span>
+                    <span className='text-[20px] font-semibold text-white'>Sự tiện lợi giành cho những <br /> Nhà đầu tư bận rộn  chatbot <br />  tự động hoàn toàn, dữ liệu <br /> Real-time trên nền tảng Zalo <br /> và Telegram</span>
                     <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
                       <a className='mr-2' href="https://binfo.bsi.com.vn/" target='_blank'>Xem thêm  </a>
                       <AiOutlineArrowRight />
@@ -314,15 +314,15 @@ export default function Home() {
                     height={150}
                     alt="img-item1"
                   ></Image>
-                  <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
+                  <span className="text-[#01A7FB] font-bold text-[30px] mt-5">AI Quick Report</span>
                 </div>
                 :
                 <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover3} ${isHoveredImg3 ? 'animate__animated animate__fadeIn' : ''} h-[305px] relative`}>
                   <div className='flex flex-col justify-between items-center h-full  p-5  ' >
                     <h1 className='text-[#FEBC08] text-[40px] font-bold'>
-                      B-Info
+                      B-Report
                     </h1>
-                    <span className='text-[20px] font-semibold text-white'>Webapp đầy đủ và toàn diện <br /> với các công cụ hỗ trợ phân <br /> tích dữ & quan sát thị trường</span>
+                    <span className='text-[20px] font-semibold text-white'>Hệ thống AI phản hồi báo <br /> cáo đa dạng, trực quan, <br /> nhanh chóng về giao dịch <br /> thị trường & doanh nghiệp.</span>
                     <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
                       <a className='mr-2' href="https://binfo.bsi.com.vn/" target='_blank'>Xem thêm  </a>
                       <AiOutlineArrowRight />
@@ -345,15 +345,15 @@ export default function Home() {
                     height={150}
                     alt="img-item1"
                   ></Image>
-                  <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
+                  <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Market Tracker</span>
                 </div>
                 :
-                <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover3} ${isHoveredImg4 ? 'animate__animated animate__fadeIn' : ''} h-[305px] relative`}>
+                <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover4} ${isHoveredImg4 ? 'animate__animated animate__fadeIn' : ''} h-[305px] relative`}>
                   <div className='flex flex-col justify-between items-center h-full  p-5  ' >
                     <h1 className='text-[#FEBC08] text-[40px] font-bold'>
-                      B-Info
+                      B-Signal
                     </h1>
-                    <span className='text-[20px] font-semibold text-white'>Webapp đầy đủ và toàn diện <br /> với các công cụ hỗ trợ phân <br /> tích dữ & quan sát thị trường</span>
+                    <span className='text-[20px] font-semibold text-white'>Hệ thống tín hiệu theo dõi & <br /> thông báo cập nhật mọi <br /> biến động thị trường</span>
                     <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
                       <a className='mr-2' href="https://binfo.bsi.com.vn/" target='_blank'>Xem thêm  </a>
                       <AiOutlineArrowRight />
