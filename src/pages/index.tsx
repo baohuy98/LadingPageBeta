@@ -108,9 +108,9 @@ export default function Home() {
   }
 
   useEffect(() => {
-    showSlides(slideIndex);
-    showSlidesImg(slideIndexImg);
-    showSlidesImg2(slideIndexImg2);
+    // showSlides(slideIndex);
+    // showSlidesImg(slideIndexImg);
+    // showSlidesImg2(slideIndexImg2);
   }, [slideIndex, slideIndexImg, slideIndexImg2]);
 
   const [isHoveredImg1, setIsHoveredImg1] = useState(false)
@@ -615,40 +615,45 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer>
-        <section className='contact_section h-[500px]' id='contact_section'>
+        <section className='contact_section' id='contact_section'>
           <div className="bg-[url('../../public/assets/image/footer-img.png')] h-full bg-center bg-[length:100%_500px]">
-            <div className='text-center pt-[79px]'>
-              <h2 className='contact_section-title text-[55px] font-bold'>MIỄN PHÍ DÙNG THỬ CÔNG CỤ HỖ TRỢ <br></br> ĐẦU TƯ SINH LỜI HIỆU QUẢ </h2>
+            <div className='text-center pt-[80px]'>
+              <div className='xl:text-[55px] lg:text-4xl md:text-3xl sm:text-lg xs:text-[17px] xxs:text-sm font-bold'>
+                <p className='contact_section-title leading-snug'>MIỄN PHÍ DÙNG THỬ CÔNG CỤ HỖ TRỢ</p>
+                <p className='contact_section-title leading-snug'>ĐẦU TƯ SINH LỜI HIỆU QUẢ</p>
+              </div>
             </div>
             <div className='flex flex-col items-center'>
-              <div className='flex justify-around pt-[85px] w-[1000px]'>
-                <a href='https://zalo.me/1623670409453822014' target="_blank" className='text-2xl text-white font-bold'><button className='btn-zalo px-[69px] py-[10px]'>Zalo</button></a>
-                <a href='https://t.me/betaEmarketbot' target="_blank" className='text-2xl text-white font-bold'><button className='btn-tele px-[38px] py-[10px]'>Telegram</button></a>
-                <a href='#' className='text-2xl text-white font-bold'><button className='btn-web px-[13px] py-[10px]'>Web Platform</button></a>
+              <div className='flex md:flex-row sm:flex-col xs:flex-col xxs:flex-col justify-around md:py-[85px] sm:py-[50px] xs:py-[30px] xxs:py-[20px] xl:w-[1000px] lg:w-[750px] md:w-[700px]'>
+                <a href='https://zalo.me/1623670409453822014' target="_blank" className='lg:text-2xl md:text-lg text-white font-bold'><button className='m-3 btn-zalo md:px-[69px] sm:px-[69px] xs:px-[69px] xxs:px-[69px] py-[10px]'>Zalo</button></a>
+                <a href='https://t.me/betaEmarketbot' target="_blank" className='lg:text-2xl md:text-lg text-white font-bold'><button className='m-3 btn-tele md:px-[38px] sm:px-[51px] xs:px-[51px] xxs:px-[51px] py-[10px]'>Telegram</button></a>
+                <a href='#' className='lg:text-2xl md:text-lg text-white font-bold'><button className='m-3 btn-web md:px-[13px] sm:px-[34px] xs:px-[34px] xxs:px-[34px] py-[10px]'>Web Platform</button></a>
               </div>
             </div>
           </div>
         </section>
 
-        <section className='bg-[#041339] h-[536px]'>
-          <div className='flex px-[60px] py-[70px]'>
-            <div className='w-[70%]'>
-              <Image src={LogoColor} alt='logo-color' className='w-[250px] h-[98px]' />
-              <div className='text-white text-2xl pt-10 font-[Montserrat]'>
+        <section className='bg-[#041339]'>
+          <div className='xl:flex lg:block md:px-[60px] md:py-[70px] sm:px-[30px] sm:py-[40px] xs:px-[10px] xs:py-[20px] xxs:px-[10px] xxs:py-[20px]'>
+            <div className='xl:w-[70%] lg:w-full'>
+              <Image src={LogoColor} alt='logo-color' className='md:w-[250px] md:h-[98px] sm:w-[145px] sm:h-[50px] xs:w-[145px] xs:h-[50px] xxs:w-[145px] xxs:h-[50px]' />
+              <div className='text-white lg:text-2xl md:text-xl sm:text-xs xs:text-xs xxs:text-[10px] pt-10 font-[Montserrat]'>
                 <ul>
-                  <li>Trụ sở: Toà nhà BETA - Lầu 4&5, số 55 Nam Kỳ Khởi Nghĩa,<br></br> Phường Nguyễn Thái Bình, Quận 1, Thành phố Hồ Chí Minh</li>
-                  <li className='pt-7'>Dị̣ch vụ khách hàng: <a href='tel:02839142626' className='hover:underline'>(028) 3914 2626</a> - <a href='tel:0813337444' className='hover:underline'>08 1333 7444</a></li>
-                  <li className='pt-7'>Trụ sở chính BETA: <a href='tel:02839142929' className='hover:underline'>(028) 3914 2929</a></li>
-                  <li className='pt-7'>Email: <a href='mailto:support@bsi.com.vn' className='hover:underline'>support@bsi.com.vn</a></li>
+                  <li>Trụ sở: <a href='https://maps.google.com/?q=55%20Nam%20K%E1%BB%B3%20Kh%E1%BB%9Fi%20Ngh%C4%A9a,%20Ph%C6%B0%E1%BB%9Dng%20Nguy%E1%BB%85n%20Th%C3%A1i%20B%C3%ACnh,%20Qu%E1%BA%ADn%201,%20Th%C3%A0nh%20ph%E1%BB%91%20H%E1%BB%93%20Ch%C3%AD%20Minh' target="_blank" className='hover:underline'>Toà nhà BETA</a> - Lầu 4&5, số 55 Nam Kỳ Khởi Nghĩa,<br></br> Phường Nguyễn Thái Bình, Quận 1, Thành phố Hồ Chí Minh</li>
+                  <li className='xs:pt-7 xxs:pt-3'>Dị̣ch vụ khách hàng: <a href='tel:02839142626' className='hover:underline'>(028) 3914 2626</a> - <a href='tel:0813337444' className='hover:underline'>08 1333 7444</a></li>
+                  <li className='xs:pt-7 xxs:pt-3'>Trụ sở chính BETA: <a href='tel:02839142929' className='hover:underline'>(028) 3914 2929</a></li>
+                  <li className='xs:pt-7 xxs:pt-3'>Email: <a href='mailto:support@bsi.com.vn' className='hover:underline'>support@bsi.com.vn</a></li>
                 </ul>
               </div>
             </div>
-            <div className='w-[30%]'>
-              <div className='text-white text-2xl pt-16 font-[Montserrat] font-semibold'>Kết nối với chúng tôi</div>
-              <div className='flex justify-around w-[256px] pt-10'>
-                <a href='https://zalo.me/1623670409453822014' target="_blank"><Image src={IconZalo} alt='icon-zalo' className='w-[60px] h-[60px]' /></a>
-                <Image src={IconTele} alt='icon-tele' className='w-[60px] h-[60px]' />
-                <a href='https://www.bsi.com.vn/' target="_blank"><Image src={IconLogo} alt='icon-logo' className='w-[60px] h-[60px]' /></a>
+            <div className='xl:w-[30%] lg:w-full'>
+              <div>
+                <div className='text-white md:text-2xl sm:text-lg xl:pt-16 lg:pt-16 md:pt-12 sm:pt-10 xs:pt-8 xxs:pt-6 font-[Montserrat] font-semibold'>Kết nối với chúng tôi</div>
+                <div className='flex justify-around md:w-[256px] sm:w-[190px] xs:w-[170px] xxs:w-[170px] xs:pt-7 xxs:pt-3'>
+                  <a href='https://zalo.me/1623670409453822014' target="_blank"><Image src={IconZalo} alt='icon-zalo' className='md:w-[60px] md:h-[60px] sm:w-[40px] sm:h-[40px] xs:w-[30px] xs:h-[30px] xxs:w-[30px] xxs:h-[30px]' /></a>
+                  <Image src={IconTele} alt='icon-tele' className='md:w-[60px] md:h-[60px] sm:w-[40px] sm:h-[40px] xs:w-[30px] xs:h-[30px] xxs:w-[30px] xxs:h-[30px]' />
+                  <a href='https://www.bsi.com.vn/' target="_blank"><Image src={IconLogo} alt='icon-logo' className='md:w-[60px] md:h-[60px] sm:w-[40px] sm:h-[40px] xs:w-[30px] xs:h-[30px] xxs:w-[30px] xxs:h-[30px]' /></a>
+                </div>
               </div>
             </div>
           </div>
