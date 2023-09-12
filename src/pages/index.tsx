@@ -8,7 +8,8 @@ import Item2 from '../../public/assets/image/item-2.png'
 import Item3 from '../../public/assets/image/item-3.png'
 import Item4 from '../../public/assets/image/item-4.png'
 import Laptop from '../../public/assets/image/laptop-layout.png'
-import Phone from '../../public/assets/image/iphone-layout.png'
+import Phone from '../../public/assets/image/phone-layout.png'
+import Phone2 from '../../public/assets/image/phone-layout2.png'
 import GifLaptop from '../../public/assets/image/section1.2.gif'
 import GifPhone from '../../public/assets/image/section1.1.gif'
 import TextB from '../../public/assets/image/B.png'
@@ -21,7 +22,14 @@ import IconTele from '../../public/assets/image/icon-tele.png'
 import IconZalo from '../../public/assets/image/icon-zalo.png'
 import section2CSS from '../styles/section2.module.css'
 import BInfoTablet from '../../public/assets/image/b-info-tablet.png'
-
+import BInfo1 from '../../public/assets/image/b-info1.png'
+import BInfo2 from '../../public/assets/image/b-info2.png'
+import BInfo3 from '../../public/assets/image/b-info3.png'
+import BInfo4 from '../../public/assets/image/b-info4.png'
+import BInfoMobile1 from '../../public/assets/image/b-info1-mobile.png'
+import BInfoMobile2 from '../../public/assets/image/b-info2-mobile.png'
+import BInfoMobile3 from '../../public/assets/image/b-info3-mobile.png'
+import BInfoMobile4 from '../../public/assets/image/b-info4-mobile.png'
 import Item1Hover from '../../public/assets/image/itemHover-1.png'
 import Item2Hover from '../../public/assets/image/itemHover-2.png'
 import Item3Hover from '../../public/assets/image/itemHover-3.png'
@@ -34,16 +42,26 @@ const isServer = typeof window === 'undefined'
 const WOW = !isServer ? require('wowjs') : null
 
 export default function Home() {
-
   const [slideIndex, setSlideIndex] = useState(1);
+  const [slideIndexImg, setSlideIndexImg] = useState(1);
+  const [slideIndexImg2, setSlideIndexImg2] = useState(1);
+
   const plusSlides = (n: number) => {
     setSlideIndex(slideIndex + n)
+    setSlideIndexImg(slideIndex + n)
+    setSlideIndexImg2(slideIndex + n)
     showSlides(slideIndex + n);
+    showSlidesImg(slideIndex + n);
+    showSlidesImg2(slideIndex + n);
   }
 
   const currentSlide = (n: number) => {
-    showSlides(n);
     setSlideIndex(n)
+    setSlideIndexImg(n)
+    setSlideIndexImg2(n)
+    showSlides(n);
+    showSlidesImg(n);
+    showSlidesImg2(n);
   }
 
   const showSlides = (n: number) => {
@@ -66,9 +84,39 @@ export default function Home() {
     rectangles[slideIndex - 1].className += " active";
   }
 
+  const showSlidesImg = (n: number) => {
+    let i;
+    const slidesImg = document.getElementsByClassName("mySlides-img") as HTMLCollectionOf<HTMLElement>;
+
+    if (n > slidesImg.length) { setSlideIndexImg(1); }
+    if (n < 1) { setSlideIndexImg(slidesImg.length); }
+
+    for (i = 0; i < slidesImg.length; i++) {
+      slidesImg[i].style.display = "none";
+    }
+
+    slidesImg[slideIndexImg - 1].style.display = "block";
+  }
+
+  const showSlidesImg2 = (n: number) => {
+    let i;
+    const slidesImg = document.getElementsByClassName("mySlides-img2") as HTMLCollectionOf<HTMLElement>;
+
+    if (n > slidesImg.length) { setSlideIndexImg2(1); }
+    if (n < 1) { setSlideIndexImg2(slidesImg.length); }
+
+    for (i = 0; i < slidesImg.length; i++) {
+      slidesImg[i].style.display = "none";
+    }
+
+    slidesImg[slideIndexImg2 - 1].style.display = "block";
+  }
+
   useEffect(() => {
     showSlides(slideIndex);
-  }, [slideIndex]);
+    showSlidesImg(slideIndexImg);
+    showSlidesImg2(slideIndexImg2);
+  }, [slideIndex, slideIndexImg, slideIndexImg2]);
 
 
   const [isHoveredImg1, setIsHoveredImg1] = useState(false)
@@ -84,7 +132,6 @@ export default function Home() {
       wow.init();
     }
   }, [])
-
 
   return (
     <Fragment>
@@ -111,7 +158,7 @@ export default function Home() {
       {/* HEADER */}
       <header className='h-[60px] flex justify-between items-center bg-[#154162] sticky top-0 z-50'>
         <div className='logo'>
-          <Image src={Logo} alt='logo' ></Image>
+          <Image src={Logo} alt='logo'></Image>
         </div>
         <div className='navbar'>
           <ul className="font-medium flex text-white">
@@ -132,8 +179,7 @@ export default function Home() {
       </header>
 
       {/* MAIN */}
-      <main className=''>
-
+      <main>
         {/* SECTION B-SIGN */}
         <section className='bsign_section relative z-20 overflow-hidden'>
           <div className="bg-[url('https://resource.bsi.com.vn/resources/landing-page/background-section1.jpg')] h-full bg-cover bg-center">
@@ -327,9 +373,30 @@ export default function Home() {
         <section className='webInfo_section bg-webInfo-section h-[750px] relative z-30 overflow-hidden'>
           <div className='grid grid-cols-2'>
             <div className='grid place-items-center'>
-              <div className='h-[580px]'>
-                <Image src={BInfoTablet} alt='b-info-tablet' className='w-[310px] h-[292px]' />
+              <div className='h-[580px] w-full relative'>
+                <div className='relative top-[155px] left-[100px] w-fit'>
+                  <Image src={BInfoTablet} alt='b-info-tablet' className='w-[278px] h-[292px]' />
+                </div>
 
+                <div className='relative top-[-170px] left-[320px] z-20'>
+                  <Image src={Laptop} alt='laptop' className='relative z-10' />
+                  <div className='absolute top-[11px] left-[54px] w-[350px] overflow-hidden flex'>
+                    <Image src={BInfo1} alt='b-info1' className='mySlides-img animate__animated animate__slideInRight rounded-lg w-[350px]' />
+                    <Image src={BInfo2} alt='b-info2' className='mySlides-img animate__animated animate__slideInRight rounded-lg w-[350px]' />
+                    <Image src={BInfo3} alt='b-info3' className='mySlides-img animate__animated animate__slideInRight rounded-lg w-[350px]' />
+                    <Image src={BInfo4} alt='b-info4' className='mySlides-img animate__animated animate__slideInRight rounded-lg w-[350px]' />
+                  </div>
+                </div>
+
+                <div className='relative z-30 top-[-360px] left-[282px]'>
+                  <Image src={Phone2} alt='phone2' />
+                  <div className='absolute top-[21px] left-[31px] w-[96px] h-[211px] overflow-hidden flex'>
+                    <Image src={BInfoMobile1} alt='b-info1-mobile' className='mySlides-img2 animate__animated animate__slideInRight rounded-lg w-[96px] h-[207px]' />
+                    <Image src={BInfoMobile2} alt='b-info2-mobile' className='mySlides-img2 animate__animated animate__slideInRight rounded-lg w-[96px] h-[207px]' />
+                    <Image src={BInfoMobile3} alt='b-info3-mobile' className='mySlides-img2 animate__animated animate__slideInRight rounded-lg w-[96px] h-[207px]' />
+                    <Image src={BInfoMobile4} alt='b-info4-mobile' className='mySlides-img2 animate__animated animate__slideInRight rounded-lg w-[96px] h-[207px]' />
+                  </div>
+                </div>
               </div>
 
               <div className='flex items-center'>
