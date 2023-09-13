@@ -32,11 +32,13 @@ import BInfoMobile3 from '../../public/assets/image/b-info3-mobile.png'
 import BInfoMobile4 from '../../public/assets/image/b-info4-mobile.png'
 import { AiOutlineArrowRight } from "react-icons/ai";
 import 'animate.css';
+import { Transition } from '@headlessui/react'
 
 const isServer = typeof window === 'undefined'
 const WOW = !isServer ? require('wowjs') : null
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
   const [slideIndex, setSlideIndex] = useState(1);
   const [slideIndexImg, setSlideIndexImg] = useState(1);
   const [slideIndexImg2, setSlideIndexImg2] = useState(1);
@@ -150,26 +152,107 @@ export default function Home() {
       </Head>
 
       {/* HEADER */}
-      <header className='h-[60px] flex justify-between items-center bg-[#154162] sticky top-0 z-50'>
-        <div className='logo'>
-          <Image src={Logo} alt='logo'></Image>
+      <header className='sticky top-0 z-50'>
+        <div className='h-[60px] bg-[#154162]'>
+          <div className='flex justify-between items-center shadow-md'>
+            <div className='logo'>
+              <Image src={Logo} alt='logo'></Image>
+            </div>
+            <div className='navbar md:block sm:hidden xs:hidden xxs:hidden'>
+              <ul className="font-medium flex text-white">
+                <li>
+                  <a href="#" className="block py-2 lg:px-9 md:px-5 font-semibold text-[21px]">Dịch vụ</a>
+                </li>
+                <li>
+                  <a href="#solution_section" className="block py-2 lg:px-9 md:px-5 font-semibold text-[21px]">Sản phẩm</a>
+                </li>
+                <li>
+                  <a href="#contact_section" className="block py-2 lg:px-9 md:px-5 font-semibold text-[21px]">Liên hệ</a>
+                </li>
+                <li>
+                  <button className="mx-5 my-1 block cssbuttons-io-button text-lg font-semibold"><span>Sử dụng ngay</span></button>
+                </li>
+              </ul>
+            </div>
+            <div className="mr-5 flex md:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                type="button"
+                className="bg-[#154162] inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+              >
+                <span className="sr-only">Open main menu</span>
+                {!isOpen ? (
+                  <svg
+                    className="block h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    className="block h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                )}
+              </button>
+            </div>
+          </div>
         </div>
-        <div className='navbar'>
-          <ul className="font-medium flex text-white">
-            <li>
-              <a href="#" className="block py-2 lg:px-9 md:px-5 font-semibold text-[21px]">Dịch vụ</a>
-            </li>
-            <li>
-              <a href="#solution_section" className="block py-2 lg:px-9 md:px-5 font-semibold text-[21px]">Sản phẩm</a>
-            </li>
-            <li>
-              <a href="#contact_section" className="block py-2 lg:px-9 md:px-5 font-semibold text-[21px]">Liên hệ</a>
-            </li>
-            <li>
-              <button className="mx-5 my-1 block cssbuttons-io-button"><span>Sử dụng ngay</span></button>
-            </li>
-          </ul>
-        </div>
+        <Transition
+          show={isOpen}
+          enter="transition ease-out duration-100 transform"
+          enterFrom="opacity-0 scale-95"
+          enterTo="opacity-100 scale-100"
+          leave="transition ease-in duration-75 transform"
+          leaveFrom="opacity-100 scale-100"
+          leaveTo="opacity-0 scale-95"
+        >
+          {(ref) => (
+            <div className="md:hidden" id="mobile-menu">
+              <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-2 bg-[#154162]">
+                <div className='navbar'>
+                  <ul className="font-medium text-white">
+                    <li>
+                      <a href="#" className="block py-2 px-2 font-semibold text-[18px]">Dịch vụ</a>
+                    </li>
+                    <li>
+                      <a href="#solution_section" className="block py-2 px-2 font-semibold text-[18px]">Sản phẩm</a>
+                    </li>
+                    <li>
+                      <a href="#contact_section" className="block py-2 px-2 font-semibold text-[18px]">Liên hệ</a>
+                    </li>
+                    <li>
+                      <button className="mx-2 my-1 block cssbuttons-io-button text-lg font-semibold"><span>Sử dụng ngay</span></button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          )}
+
+        </Transition>
       </header>
 
       {/* MAIN */}
@@ -179,42 +262,41 @@ export default function Home() {
           <div className="bg-[url('https://resource.bsi.com.vn/resources/landing-page/background-section1.jpg')] h-full bg-cover bg-center">
             <div className='absolute top-0 left-0 w-full h-full bg-black opacity-60'></div>
             <div className='relative z-10'>
-              <div className='flex xl:flex-row lg:flex-col md:flex-col items-center justify-evenly p-[45px]'>
-                <div className='flex animate__animated animate__fadeInLeft animate__delay-1s'>
-                  <Image src={TextB} alt='text-b' />
+              <div className='flex xl:flex-row lg:flex-col md:flex-col sm:flex-col xs:flex-col xxs:flex-col items-center justify-evenly xs:p-[45px] xxs:p-[20px]'>
+                <div className='flex wow animate__animated animate__fadeInLeft animate__delay-1s'>
+                  <Image src={TextB} alt='text-b' className='md:w-[159px] md:h-[238px] sm:w-[130px] sm:h-[120px] xs:w-[110px] xs:h-[100px] xxs:w-[90px] xxs:h-[110px]' />
 
                   <div className='pl-3'>
                     <div className='text-sign'>
-                      <h2 className='text-[#FCB040] text-8xl font-bold'>Sign</h2>
+                      <h2 className='text-[#FCB040] md:text-8xl sm:text-5xl xs:text-4xl xxs:text-4xl font-bold'>Sign</h2>
                     </div>
 
-                    <div className='text-content mt-5'>
-                      <div className='text-4xl font-bold h-[45px]'>Công cụ hỗ trợ đầu tư</div>
-                      <div className='text-4xl font-bold h-[45px]'>Thông minh - An toàn - Tiện lợi</div>
+                    <div className='text-content md:mt-5 sm:mt-1 xs:mt-1 xxs:mt-2'>
+                      <div className='lg:text-4xl md:text-3xl sm:text-lg xs:text-lg xxs:text-sm font-bold md:h-[45px] sm:h-fit'>Công cụ hỗ trợ đầu tư</div>
+                      <div className='lg:text-4xl md:text-3xl sm:text-base xs:text-sm xxs:text-xs font-bold md:h-[45px] sm:h-fit'>Thông minh - An toàn - Tiện lợi</div>
                     </div>
                   </div>
                 </div>
 
-                <div className='animate__animated animate__fadeIn animate__slower'>
-                  <div className='relative translate-x-[270px] translate-y-[190px] w-fit z-30'>
-                    <Image src={Phone} alt='phone' className='relative z-10 w-[258px]' />
-                    <Image src={GifPhone} alt='gif-phone' className='absolute top-[9px] left-[64px] w-[128px] h-[268px] rounded-xl z-0' />
+                <div className='wow animate__animated animate__fadeIn animate__slower'>
+                  <div className='relative md:translate-x-[330px] md:translate-y-[180px] sm:translate-x-[220px] sm:translate-y-[130px] xs:translate-x-[200px] xs:translate-y-[125px] xxs:translate-x-[190px] xxs:translate-y-[120px] w-fit z-30'>
+                    <Image src={Phone} alt='phone' className='relative z-10 md:w-[135px] md:h-[285px] sm:w-[105px] sm:h-[220px] xs:w-[105px] xs:h-[220px] xxs:w-[90px] xxs:h-[200px]' />
+                    <Image src={GifPhone} alt='gif-phone' className='absolute md:top-[10px] md:left-[7px] md:w-[120px] md:h-[267px] sm:top-[10px] sm:left-[7px] sm:w-[92px] sm:h-[204px] xs:top-[10px] xs:left-[7px] xs:w-[92px] xs:h-[204px] xxs:top-[8px] xxs:left-[6px] xxs:w-[80px] xxs:h-[184px] rounded-xl' />
                   </div>
 
                   <div className='relative w-fit'>
-                    <Image src={Laptop} alt='laptop' />
-                    <Image src={GifLaptop} alt='gif-laptop' className='absolute top-[14px] left-[48px] w-[355px] h-[211px]' />
+                    <Image src={Laptop} alt='laptop' className='md:w-[450px] md:h-[326px] sm:w-[300px] sm:h-[232px]' />
+                    <Image src={GifLaptop} alt='gif-laptop' className='absolute md:top-[14px] md:left-[48px] sm:top-[5px] sm:left-[34px] xs:top-[3px] xs:left-[32px] xxs:top-[4px] xxs:left-[31px] md:w-[355px] md:h-[211px] sm:w-[232px] sm:h-[160px] xs:w-[221px] xs:h-[146px] xxs:w-[219px] xxs:h-[142px]' />
                   </div>
                 </div>
               </div>
 
               <div className='grid place-items-center'>
-                <div className='border-solid border-white border-b-2 border-t-0 border-x-0 w-[1515px] h-[3px]'></div>
+                <div className='border-solid border-white border-b-2 border-t-0 border-x-0 2xl:w-[1515px] xl:w-[1290px] lg:w-[850px] md:w-[650px] sm:w-[365px] xs:w-[330px] xxs:w-[300px] h-[3px]'></div>
               </div>
 
-
-              <div className='grid place-items-center animate__animated animate__slideInUp animate__delay-1s '>
-                <div className='bsign-content xl:w-[1036px] lg:w-full p-[45px] text-[25px] overflow-hidden'>
+              <div className='grid place-items-center wow animate__animated animate__slideInUp animate__delay-1s'>
+                <div className='bsign-content text-justify xl:w-[1036px] lg:w-full xs:p-[45px] xxs:p-[20px] md:text-[25px] sm:text-sm xs:text-[13px] xxs:text-xs'>
                   “... với định hướng phát triển dựa trên hai giá trị cốt lõi là <span className='font-bold'>CON NGƯỜI</span> và <span className='font-bold'>CÔNG NGHỆ</span>, chúng tôi đang hoàn thành sứ mệnh cung cấp đến những <span className='font-bold'>Nhà đầu tư cá nhân</span> các giải pháp số hóa gần gũi, hiệu quả, dễ dàng tiếp cận và <span className='font-bold'>hoàn toàn miễn phí</span>...”
                 </div>
               </div>
@@ -364,36 +446,37 @@ export default function Home() {
         </section>
 
         {/* SECTION INFO */}
-        <section className='webInfo_section bg-webInfo-section h-[750px] relative z-30 overflow-hidden'>
-          <div className='grid grid-cols-2'>
+        {/* Mới respon đến 425 */}
+        <section className='webInfo_section bg-webInfo-section relative z-30 overflow-hidden'>
+          <div className='grid xl:grid-cols-2 lg:grid-cols-none md:p-[60px] sm:p-[30px]'>
             <div className='grid place-items-center'>
-              <div className='h-[580px] w-full relative'>
-                <div className='relative top-[155px] left-[100px] w-fit'>
-                  <Image src={BInfoTablet} alt='b-info-tablet' className='w-[278px] h-[292px]' />
+              <div className='md:h-[580px] sm:h-[350px] w-full relative'>
+                <div className='relative 2xl:top-[125px] 2xl:left-[20px] xl:top-[125px] xl:left-[-20px] lg:top-[125px] lg:left-[100px] md:top-[125px] md:left-[-15px] sm:top-[125px] sm:left-[-10px] w-fit'>
+                  <Image src={BInfoTablet} alt='b-info-tablet' className='2xl:w-[278px] 2xl:h-[292px] xl:w-[278px] xl:h-[292px] lg:w-[278px] lg:h-[292px] md:w-[278px] md:h-[292px] sm:w-[175px] sm:h-[180px]' />
                 </div>
 
-                <div className='relative z-20 top-[-170px] left-[320px]'>
-                  <Image src={Laptop} alt='laptop' className='relative z-10' />
-                  <div className='absolute top-[11px] left-[54px] w-[350px] overflow-hidden flex'>
-                    <Image src={BInfo1} alt='b-info1' className='mySlides-img animate__animated animate__slideInRight rounded-lg w-[350px]' />
-                    <Image src={BInfo2} alt='b-info2' className='mySlides-img animate__animated animate__slideInRight rounded-lg w-[350px]' />
-                    <Image src={BInfo3} alt='b-info3' className='mySlides-img animate__animated animate__slideInRight rounded-lg w-[350px]' />
-                    <Image src={BInfo4} alt='b-info4' className='mySlides-img animate__animated animate__slideInRight rounded-lg w-[350px]' />
+                <div className='relative z-20 2xl:top-[-200px] 2xl:left-[240px] xl:top-[-200px] xl:left-[200px] lg:top-[-200px] lg:left-[320px] md:top-[-200px] md:left-[205px] sm:top-[-62px] sm:left-[136px]'>
+                  <Image src={Laptop} alt='laptop' className='relative z-10 md:w-[450px] md:h-[326px] sm:w-[230px] sm:h-[181px]' />
+                  <div className='absolute md:top-[11px] md:left-[54px] sm:top-[2px] sm:left-[25px] md:w-[350px] sm:w-[177px] overflow-hidden flex'>
+                    <Image src={BInfo1} alt='b-info1' className='mySlides-img animate__animated animate__slideInRight rounded-lg md:w-[350px] md:h-[226px] sm:w-[177px] sm:h-[127px]' />
+                    <Image src={BInfo2} alt='b-info2' className='mySlides-img animate__animated animate__slideInRight rounded-lg md:w-[350px] md:h-[226px] sm:w-[177px] sm:h-[127px]' />
+                    <Image src={BInfo3} alt='b-info3' className='mySlides-img animate__animated animate__slideInRight rounded-lg md:w-[350px] md:h-[226px] sm:w-[177px] sm:h-[127px]' />
+                    <Image src={BInfo4} alt='b-info4' className='mySlides-img animate__animated animate__slideInRight rounded-lg md:w-[350px] md:h-[226px] sm:w-[177px] sm:h-[127px]' />
                   </div>
                 </div>
 
-                <div className='relative z-30 top-[-360px] left-[282px]'>
-                  <Image src={Phone2} alt='phone2' />
-                  <div className='absolute top-[21px] left-[31px] w-[96px] h-[211px] overflow-hidden flex'>
-                    <Image src={BInfoMobile1} alt='b-info1-mobile' className='mySlides-img2 animate__animated animate__slideInRight rounded-lg w-[96px] h-[207px]' />
-                    <Image src={BInfoMobile2} alt='b-info2-mobile' className='mySlides-img2 animate__animated animate__slideInRight rounded-lg w-[96px] h-[207px]' />
-                    <Image src={BInfoMobile3} alt='b-info3-mobile' className='mySlides-img2 animate__animated animate__slideInRight rounded-lg w-[96px] h-[207px]' />
-                    <Image src={BInfoMobile4} alt='b-info4-mobile' className='mySlides-img2 animate__animated animate__slideInRight rounded-lg w-[96px] h-[207px]' />
+                <div className='relative z-30 2xl:top-[-390px] 2xl:left-[210px] xl:top-[-390px] xl:left-[170px] lg:top-[-390px] lg:left-[290px] md:top-[-390px] md:left-[175px] sm:top-[-175px] sm:left-[105px]'>
+                  <Image src={Phone2} alt='phone2' className='md:w-[159px] md:h-[250px] sm:w-[95px] sm:h-[145px]' />
+                  <div className='absolute md:top-[21px] md:left-[31px] sm:top-[12px] sm:left-[19px] md:w-[96px] md:h-[211px] sm:w-[57px] sm:h-[211px] overflow-hidden flex'>
+                    <Image src={BInfoMobile1} alt='b-info1-mobile' className='mySlides-img2 animate__animated animate__slideInRight rounded-md md:w-[96px] md:h-[207px] sm:w-[96px] sm:h-[120px]' />
+                    <Image src={BInfoMobile2} alt='b-info2-mobile' className='mySlides-img2 animate__animated animate__slideInRight rounded-md md:w-[96px] md:h-[207px] sm:w-[96px] sm:h-[120px]' />
+                    <Image src={BInfoMobile3} alt='b-info3-mobile' className='mySlides-img2 animate__animated animate__slideInRight rounded-md md:w-[96px] md:h-[207px] sm:w-[96px] sm:h-[120px]' />
+                    <Image src={BInfoMobile4} alt='b-info4-mobile' className='mySlides-img2 animate__animated animate__slideInRight rounded-md md:w-[96px] md:h-[207px] sm:w-[96px] sm:h-[120px]' />
                   </div>
                 </div>
               </div>
 
-              <div className='flex items-center'>
+              <div className='items-center flex'>
                 <a className="prev" onClick={() => plusSlides(-1)}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="35" height="12" viewBox="0 0 35 12" fill="none">
                     <path d="M35 7.32203L5.41118 7.32203V12L0 5.89831L5.41118 0V4.47458L35 4.47458V7.32203Z" fill="#D9D9D9" />
@@ -413,14 +496,14 @@ export default function Home() {
 
             <div className='slideshow-container'>
               <div className='mySlides animate__animated animate__slideInRight'>
-                <div className='text-white pt-[125px]'>
-                  <h2 className='text-5xl font-bold ml-2'>Web Platform  B-Info</h2>
-                  <p className='text-2xl font-bold pt-[50px]'>
+                <div className='text-white xl:pt-[115px] lg:pt-[30px] md:pt-[30px]'>
+                  <h2 className='md:text-5xl sm:text-3xl font-bold ml-2'>Web Platform B-Info</h2>
+                  <p className='md:text-2xl sm:text-lg font-bold md:pt-[50px] sm:pt-[20px]'>
                     Nền tảng hỗ trợ đầu tư MIỄN PHÍ
                     <br></br>
                     Dễ dàng truy cập MỌI LÚC, MỌI NƠI
                   </p>
-                  <ul className='list-disc pt-5 text-xl ml-9'>
+                  <ul className='list-disc md:pt-5 sm:pt-2 md:text-xl sm:text-base ml-9'>
                     <li className='pt-5'>Phân tích toàn diện và chuyên sâu về doanh nghiệp, thị trường.</li>
                     <li className='pt-5'>Cập nhật dữ liệu liên tục theo thời gian thực.</li>
                     <li className='pt-5'>Cung cấp thông tin thị trường trong và ngoài nước.</li>
@@ -431,14 +514,14 @@ export default function Home() {
               </div>
 
               <div className='mySlides animate__animated animate__slideInRight'>
-                <div className='text-white pt-[125px]'>
-                  <h2 className='text-5xl font-bold ml-2'>Dữ liệu vĩ mô đa dạng</h2>
-                  <p className='text-2xl font-bold pt-[50px]'>
+                <div className='text-white xl:pt-[125px] lg:pt-[30px] md:pt-[30px]'>
+                  <h2 className='md:text-5xl  sm:text-3xl font-bold ml-2'>Dữ liệu vĩ mô đa dạng</h2>
+                  <p className='md:text-2xl sm:text-lg font-bold md:pt-[50px] sm:pt-[20px]'>
                     Thông tin, dữ liệu kinh tế vĩ mô Việt Nam và thế giới
                     <br></br>
                     Cập nhật nhanh về thị trường, phân tích sâu về kinh tế
                   </p>
-                  <ul className='list-disc pt-5 text-xl ml-9'>
+                  <ul className='list-disc md:pt-5 sm:pt-2 md:text-xl sm:text-base ml-9'>
                     <li className='pt-5'>Biểu đồ và đồ thị sinh động, dễ dàng nhìn thấy xu hướng thị trường.</li>
                     <li className='pt-5'>Xây dựng kiến thức về tài chính và kinh tế với các chỉ số quan trọng.</li>
                     <li className='pt-5'>Đa dạng hóa danh mục đầu tư và giảm thiểu rủi ro từ nguồn thông tin đáng tin cậy.</li>
@@ -448,14 +531,14 @@ export default function Home() {
               </div>
 
               <div className='mySlides animate__animated animate__slideInRight'>
-                <div className='text-white pt-[125px]'>
-                  <h2 className='text-5xl font-bold ml-2'>Tổng quan cổ phiếu</h2>
-                  <p className='text-2xl font-bold pt-[50px]'>
+                <div className='text-white xl:pt-[125px] lg:pt-[30px] md:pt-[30px]'>
+                  <h2 className='md:text-5xl sm:text-3xl font-bold ml-2'>Tổng quan cổ phiếu</h2>
+                  <p className='md:text-2xl sm:text-lg font-bold md:pt-[50px] sm:pt-[20px]'>
                     Tra cứu cổ phiếu nhanh chóng
                     <br></br>
                     Thông tin toàn diện, chính xác
                   </p>
-                  <ul className='list-disc pt-5 text-xl ml-9'>
+                  <ul className='list-disc md:pt-5 sm:pt-2 md:text-xl sm:text-base ml-9'>
                     <li className='pt-5'>Phân tích chuyên sâu về biến động giá, chỉ số tài chính và sự kiện ảnh hưởng.</li>
                     <li className='pt-5'>Thống kê chi tiết các giao dịch, yếu tố ảnh hưởng trực tiếp đến cổ phiếu.</li>
                     <li className='pt-5'>Tiết kiệm thời gian khi tra cứu báo cáo tài chính doanh nghiệp.</li>
@@ -465,14 +548,14 @@ export default function Home() {
               </div>
 
               <div className='mySlides animate__animated animate__slideInRight'>
-                <div className='text-white pt-[125px]'>
-                  <h2 className='text-5xl font-bold ml-2'>Công cụ đầu tư tiện lợi</h2>
-                  <p className='text-2xl font-bold pt-[50px]'>
+                <div className='text-white xl:pt-[125px] lg:pt-[30px] md:pt-[30px]'>
+                  <h2 className='md:text-5xl sm:text-3xl font-bold ml-2'>Công cụ đầu tư tiện lợi</h2>
+                  <p className='md:text-2xl sm:text-lg font-bold md:pt-[50px] sm:pt-[20px]'>
                     Công cụ hỗ trợ đầu tư độc quyền
                     <br></br>
                     Hiệu suất sinh lời vượt trội và ổn định
                   </p>
-                  <ul className='list-disc pt-5 text-xl ml-9'>
+                  <ul className='list-disc md:pt-5 sm:pt-2 md:text-xl sm:text-base ml-9'>
                     <li className='pt-5'>Bộ lọc tìm kiếm tối ưu hóa việc tìm kiếm và đánh giá cổ phiếu theo tiêu chí.</li>
                     <li className='pt-5'>Công cụ giả lập đầu tư kiểm tra, phân tích và tối ưu chiến lược đầu tư.</li>
                     <li className='pt-5'>Công cụ thông minh theo dõi chuyển động thị trường, hỗ trợ phân bổ đầu tư</li>
@@ -486,8 +569,8 @@ export default function Home() {
 
         {/* SECTION B-MARKET */}
         <section className='bmarket_section' id='bmarket_section'>
-          <div className='grid grid-cols-2'>
-            <div className='px-[160px] py-[60px]'>
+          <div className='grid xl:grid-cols-2 lg:grid-cols-none px-[60px] py-[60px]'>
+            <div className=''>
               <h2 className='bmarket_section-title'>B- Market : Môi giới Số cho Nhà đầu tư </h2>
 
               <p className='font-bold text-2xl pt-3'>Hỗ trợ nhu cầu dữ liệu thị trường theo thời gian<br></br> thực tự động, tiện lợi, chuẩn xác. Hoạt động trên<br></br> các nền tảng các mạng xã hội Zalo, Telegram. </p>
@@ -495,25 +578,31 @@ export default function Home() {
               <ul>
                 <li className='pt-7'>
                   <span className='flex'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
-                      <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
-                    </svg>
+                    <div className='w-[30px] h-[31px]'>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+                        <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
+                      </svg>
+                    </div>
                     <p className='text-2xl pl-3'>Nhanh chóng và hiệu quả.</p>
                   </span>
                 </li>
                 <li className='pt-6'>
                   <span className='flex'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
-                      <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
-                    </svg>
+                    <div className='w-[30px] h-[31px]'>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+                        <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
+                      </svg>
+                    </div>
                     <p className='text-2xl pl-3'>Trải nghiệm tiện lợi.</p>
                   </span>
                 </li>
                 <li className='pt-6'>
                   <span className='flex'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
-                      <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
-                    </svg>
+                    <div className='w-[30px] h-[31px]'>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+                        <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
+                      </svg>
+                    </div>
                     <p className='text-2xl pl-3'>Không ngừng hoàn thiện</p>
                   </span>
                 </li>
@@ -531,13 +620,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className='grid grid-cols-2 py-[60px]'>
+            <div className='grid grid-cols-2 place-content-center'>
               <div className='relative w-fit z-30'>
-                <Image src={Phone} alt='phone' className='relative z-10' />
-                <Image src={GifPhone} alt='gif-phone' className='absolute top-[20px] left-[124px] w-[227px] h-[488px] rounded-xl z-0' />
+                <Image src={Phone} alt='phone' className='relative z-10 w-[260px] h-[500px]' />
+                <Image src={GifPhone} alt='gif-phone' className='absolute top-[20px] left-[15px] w-[230px] h-[463px] rounded-xl z-0' />
               </div>
-              <div>
-                <Image src={BMarketTele} alt='b-market-tele' className='w-[333px] h-[528px]' />
+              <div className='w-fit'>
+                <Image src={BMarketTele} alt='b-market-tele' className='w-[260px] h-[500px]' />
               </div>
             </div>
           </div>
@@ -548,67 +637,79 @@ export default function Home() {
 
         {/* SECTION B-SIGNAL */}
         <section className='bsignal_section relative' id='bsignal_section'>
-          <div className='grid grid-cols-2'>
-            <div>
-              <h2 className='bsignal_section-title pt-[99px]'>Tránh bỏ lỡ những biến <br></br> động thị trường cùng hệ<br></br> thống cảnh báo B-Signal</h2>
+          <div className='p-7'>
+            <div className='grid xl:grid-cols-2 lg:grid-cols-none'>
+              <div className='grid place-content-center'>
+                <h2 className='bsignal_section-title md:pt-[99px] sm:pt-[20px] md:text-[50px] sm:text-2xl xs:text-xl xxs:text-xl font-bold'>Tránh bỏ lỡ những biến <br></br> động thị trường cùng hệ<br></br> thống cảnh báo B-Signal</h2>
 
-              <ul className='mt-[55px] ml-[200px]'>
-                <li className='pt-7'>
-                  <span className='flex'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
-                      <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
-                    </svg>
-                    <p className='text-2xl pl-3'>Tối ưu hóa quyết định đầu tư dựa trên phân tích chính xác</p>
-                  </span>
-                </li>
-                <li className='pt-6'>
-                  <span className='flex'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
-                      <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
-                    </svg>
-                    <p className='text-2xl pl-3'>Cảnh báo thời gian thực bằng tin nhắn</p>
-                  </span>
-                </li>
-                <li className='pt-6'>
-                  <span className='flex'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
-                      <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
-                    </svg>
-                    <p className='text-2xl pl-3'>Tương thích trên nhiều nền tảng  khác nhau</p>
-                  </span>
-                </li>
-                <li className='pt-6'>
-                  <span className='flex'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
-                      <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
-                    </svg>
-                    <p className='text-2xl pl-3'>Tùy chỉnh danh mục thông báo theo nhu cầu cá nhân.</p>
-                  </span>
-                </li>
-                <li className='pt-6'>
-                  <span className='flex'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
-                      <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
-                    </svg>
-                    <p className='text-2xl pl-3'>Đã được tích hợp vào các sản phẩm công nghệ thuộc BETA.</p>
-                  </span>
-                </li>
-              </ul>
-            </div>
+                <ul className='md:mt-[55px] sm:mt-[20px]'>
+                  <li className='pt-7'>
+                    <span className='flex items-center'>
+                      <div className='w-[30px] h-[31px]'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+                          <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
+                        </svg>
+                      </div>
+                      <p className='md:text-2xl sm:text-base pl-3'>Tối ưu hóa quyết định đầu tư dựa trên phân tích chính xác</p>
+                    </span>
+                  </li>
+                  <li className='pt-6'>
+                    <span className='flex items-center'>
+                      <div className='w-[30px] h-[31px]'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+                          <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
+                        </svg>
+                      </div>
+                      <p className='md:text-2xl sm:text-base pl-3'>Cảnh báo thời gian thực bằng tin nhắn</p>
+                    </span>
+                  </li>
+                  <li className='pt-6'>
+                    <span className='flex items-center'>
+                      <div className='w-[30px] h-[31px]'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+                          <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
+                        </svg>
+                      </div>
+                      <p className='md:text-2xl sm:text-base pl-3'>Tương thích trên nhiều nền tảng  khác nhau</p>
+                    </span>
+                  </li>
+                  <li className='pt-6'>
+                    <span className='flex items-center'>
+                      <div className='w-[30px] h-[31px]'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+                          <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
+                        </svg>
+                      </div>
+                      <p className='md:text-2xl sm:text-base pl-3'>Tùy chỉnh danh mục thông báo theo nhu cầu cá nhân.</p>
+                    </span>
+                  </li>
+                  <li className='pt-6'>
+                    <span className='flex items-center'>
+                      <div className='w-[30px] h-[31px]'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
+                          <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
+                        </svg>
+                      </div>
+                      <p className='md:text-2xl sm:text-base pl-3'>Đã được tích hợp vào các sản phẩm công nghệ thuộc BETA.</p>
+                    </span>
+                  </li>
+                </ul>
+              </div>
 
-            <div>
-              <Image src={BSignal} alt='b-signal' className='h-[750px] w-[767px]' />
+              <div className='grid place-content-center'>
+                <Image src={BSignal} alt='b-signal' className='md:h-[750px] md:w-[767px] sm:h-[415px] sm:w-[365px]' />
+              </div>
             </div>
-          </div>
-          <div className='absolute bottom-0 right-0 p-4'>
-            <a href='#' className='flex items-center'>
-              <span className='animate__animated animate__bounce animate__slow animate__infinite'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="19" viewBox="0 0 22 19" fill="none">
-                  <path d="M11.4605 0L22 19H0L11.4605 0Z" fill="#0EF809" />
-                </svg>
-              </span>
-              <span className='font-bold text-2xl pl-[10px]'>Đầu trang</span>
-            </a>
+            <div className='absolute bottom-0 right-0 p-4'>
+              <a href='#' className='flex items-center'>
+                <span className='animate__animated animate__bounce animate__slow animate__infinite'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="19" viewBox="0 0 22 19" fill="none">
+                    <path d="M11.4605 0L22 19H0L11.4605 0Z" fill="#0EF809" />
+                  </svg>
+                </span>
+                <span className='font-bold md:text-2xl sm:text-lg pl-[10px]'>Đầu trang</span>
+              </a>
+            </div>
           </div>
         </section>
       </main>
