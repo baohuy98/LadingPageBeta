@@ -446,11 +446,10 @@ export default function Home() {
         </section>
 
         {/* SECTION INFO */}
-        {/* Mới respon đến 425 */}
         <section className='webInfo_section bg-webInfo-section relative z-30 overflow-hidden'>
-          <div className='grid xl:grid-cols-2 lg:grid-cols-none md:p-[60px] sm:p-[30px]'>
+          <div className='grid xl:grid-cols-2 lg:grid-cols-none md:p-[60px] sm:p-[30px] xs:p-[30px] xxs:p-[15px]'>
             <div className='grid place-items-center'>
-              <div className='md:h-[580px] sm:h-[350px] w-full relative'>
+              <div className='md:h-[580px] sm:h-[350px] w-full relative sm:block xs:hidden xxs:hidden'>
                 <div className='relative 2xl:top-[125px] 2xl:left-[20px] xl:top-[125px] xl:left-[-20px] lg:top-[125px] lg:left-[100px] md:top-[125px] md:left-[-15px] sm:top-[125px] sm:left-[-10px] w-fit'>
                   <Image src={BInfoTablet} alt='b-info-tablet' className='2xl:w-[278px] 2xl:h-[292px] xl:w-[278px] xl:h-[292px] lg:w-[278px] lg:h-[292px] md:w-[278px] md:h-[292px] sm:w-[175px] sm:h-[180px]' />
                 </div>
@@ -497,13 +496,13 @@ export default function Home() {
             <div className='slideshow-container'>
               <div className='mySlides animate__animated animate__slideInRight'>
                 <div className='text-white xl:pt-[115px] lg:pt-[30px] md:pt-[30px]'>
-                  <h2 className='md:text-5xl sm:text-3xl font-bold ml-2'>Web Platform B-Info</h2>
-                  <p className='md:text-2xl sm:text-lg font-bold md:pt-[50px] sm:pt-[20px]'>
+                  <h2 className='md:text-5xl sm:text-3xl xs:text-xl xxs:text-lg font-bold ml-2'>Web Platform B-Info</h2>
+                  <p className='md:text-2xl sm:text-lg xs:text-base xxs:text-sm font-bold md:pt-[50px] sm:pt-[20px]'>
                     Nền tảng hỗ trợ đầu tư MIỄN PHÍ
                     <br></br>
                     Dễ dàng truy cập MỌI LÚC, MỌI NƠI
                   </p>
-                  <ul className='list-disc md:pt-5 sm:pt-2 md:text-xl sm:text-base ml-9'>
+                  <ul className='list-disc md:pt-5 sm:pt-2 md:text-xl sm:text-base xs:text-xs xxs:text-xs sm:ml-9 xs:ml-2 xxs:ml-2 mr-2'>
                     <li className='pt-5'>Phân tích toàn diện và chuyên sâu về doanh nghiệp, thị trường.</li>
                     <li className='pt-5'>Cập nhật dữ liệu liên tục theo thời gian thực.</li>
                     <li className='pt-5'>Cung cấp thông tin thị trường trong và ngoài nước.</li>
@@ -515,13 +514,13 @@ export default function Home() {
 
               <div className='mySlides animate__animated animate__slideInRight'>
                 <div className='text-white xl:pt-[125px] lg:pt-[30px] md:pt-[30px]'>
-                  <h2 className='md:text-5xl  sm:text-3xl font-bold ml-2'>Dữ liệu vĩ mô đa dạng</h2>
-                  <p className='md:text-2xl sm:text-lg font-bold md:pt-[50px] sm:pt-[20px]'>
+                  <h2 className='md:text-5xl sm:text-3xl xs:text-xl xxs:text-lg font-bold ml-2'>Dữ liệu vĩ mô đa dạng</h2>
+                  <p className='md:text-2xl sm:text-lg xs:text-base xxs:text-sm font-bold md:pt-[50px] sm:pt-[20px]'>
                     Thông tin, dữ liệu kinh tế vĩ mô Việt Nam và thế giới
                     <br></br>
                     Cập nhật nhanh về thị trường, phân tích sâu về kinh tế
                   </p>
-                  <ul className='list-disc md:pt-5 sm:pt-2 md:text-xl sm:text-base ml-9'>
+                  <ul className='list-disc md:pt-5 sm:pt-2 md:text-xl sm:text-base xs:text-xs xxs:text-xs sm:ml-9 xs:ml-2 xxs:ml-2 mr-2'>
                     <li className='pt-5'>Biểu đồ và đồ thị sinh động, dễ dàng nhìn thấy xu hướng thị trường.</li>
                     <li className='pt-5'>Xây dựng kiến thức về tài chính và kinh tế với các chỉ số quan trọng.</li>
                     <li className='pt-5'>Đa dạng hóa danh mục đầu tư và giảm thiểu rủi ro từ nguồn thông tin đáng tin cậy.</li>
@@ -532,13 +531,13 @@ export default function Home() {
 
               <div className='mySlides animate__animated animate__slideInRight'>
                 <div className='text-white xl:pt-[125px] lg:pt-[30px] md:pt-[30px]'>
-                  <h2 className='md:text-5xl sm:text-3xl font-bold ml-2'>Tổng quan cổ phiếu</h2>
-                  <p className='md:text-2xl sm:text-lg font-bold md:pt-[50px] sm:pt-[20px]'>
+                  <h2 className='md:text-5xl sm:text-3xl xs:text-xl xxs:text-lg font-bold ml-2'>Tổng quan cổ phiếu</h2>
+                  <p className='md:text-2xl sm:text-lg xs:text-base xxs:text-sm font-bold md:pt-[50px] sm:pt-[20px]'>
                     Tra cứu cổ phiếu nhanh chóng
                     <br></br>
                     Thông tin toàn diện, chính xác
                   </p>
-                  <ul className='list-disc md:pt-5 sm:pt-2 md:text-xl sm:text-base ml-9'>
+                  <ul className='list-disc md:pt-5 sm:pt-2 md:text-xl sm:text-base xs:text-xs xxs:text-xs sm:ml-9 xs:ml-2 xxs:ml-2 mr-2'>
                     <li className='pt-5'>Phân tích chuyên sâu về biến động giá, chỉ số tài chính và sự kiện ảnh hưởng.</li>
                     <li className='pt-5'>Thống kê chi tiết các giao dịch, yếu tố ảnh hưởng trực tiếp đến cổ phiếu.</li>
                     <li className='pt-5'>Tiết kiệm thời gian khi tra cứu báo cáo tài chính doanh nghiệp.</li>
@@ -549,13 +548,13 @@ export default function Home() {
 
               <div className='mySlides animate__animated animate__slideInRight'>
                 <div className='text-white xl:pt-[125px] lg:pt-[30px] md:pt-[30px]'>
-                  <h2 className='md:text-5xl sm:text-3xl font-bold ml-2'>Công cụ đầu tư tiện lợi</h2>
-                  <p className='md:text-2xl sm:text-lg font-bold md:pt-[50px] sm:pt-[20px]'>
+                  <h2 className='md:text-5xl sm:text-3xl xs:text-xl xxs:text-lg font-bold ml-2'>Công cụ đầu tư tiện lợi</h2>
+                  <p className='md:text-2xl sm:text-lg xs:text-base xxs:text-sm font-bold md:pt-[50px] sm:pt-[20px]'>
                     Công cụ hỗ trợ đầu tư độc quyền
                     <br></br>
                     Hiệu suất sinh lời vượt trội và ổn định
                   </p>
-                  <ul className='list-disc md:pt-5 sm:pt-2 md:text-xl sm:text-base ml-9'>
+                  <ul className='list-disc md:pt-5 sm:pt-2 md:text-xl sm:text-base xs:text-xs xxs:text-xs sm:ml-9 xs:ml-2 xxs:ml-2 mr-2'>
                     <li className='pt-5'>Bộ lọc tìm kiếm tối ưu hóa việc tìm kiếm và đánh giá cổ phiếu theo tiêu chí.</li>
                     <li className='pt-5'>Công cụ giả lập đầu tư kiểm tra, phân tích và tối ưu chiến lược đầu tư.</li>
                     <li className='pt-5'>Công cụ thông minh theo dõi chuyển động thị trường, hỗ trợ phân bổ đầu tư</li>
@@ -569,11 +568,10 @@ export default function Home() {
 
         {/* SECTION B-MARKET */}
         <section className='bmarket_section' id='bmarket_section'>
-          <div className='grid xl:grid-cols-2 lg:grid-cols-none px-[60px] py-[60px]'>
-            <div className=''>
-              <h2 className='bmarket_section-title'>B- Market : Môi giới Số cho Nhà đầu tư </h2>
-
-              <p className='font-bold text-2xl pt-3'>Hỗ trợ nhu cầu dữ liệu thị trường theo thời gian<br></br> thực tự động, tiện lợi, chuẩn xác. Hoạt động trên<br></br> các nền tảng các mạng xã hội Zalo, Telegram. </p>
+          <div className='grid xl:grid-cols-2 lg:grid-cols-none md:p-[60px] sm:p-[30px] xs:p-[30px] xxs:p-[15px]'>
+            <div>
+              <h2 className='bmarket_section-title md:text-5xl sm:text-3xl xs:text-2xl xxs:text-xl font-bold'>B- Market : Môi giới Số cho Nhà đầu tư </h2>
+              <p className='font-bold md:text-2xl sm:text-xl xs:text-lg xxs:text-sm pt-3 text-justify'>Hỗ trợ nhu cầu dữ liệu thị trường theo thời gian thực tự động, tiện lợi, chuẩn xác. Hoạt động trên các nền tảng các mạng xã hội Zalo, Telegram. </p>
 
               <ul>
                 <li className='pt-7'>
@@ -583,7 +581,7 @@ export default function Home() {
                         <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
                       </svg>
                     </div>
-                    <p className='text-2xl pl-3'>Nhanh chóng và hiệu quả.</p>
+                    <p className='md:text-2xl sm:text-lg xs:text-lg xxs:text-lg pl-3'>Nhanh chóng và hiệu quả.</p>
                   </span>
                 </li>
                 <li className='pt-6'>
@@ -593,7 +591,7 @@ export default function Home() {
                         <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
                       </svg>
                     </div>
-                    <p className='text-2xl pl-3'>Trải nghiệm tiện lợi.</p>
+                    <p className='md:text-2xl sm:text-lg xs:text-lg xxs:text-lg pl-3'>Trải nghiệm tiện lợi.</p>
                   </span>
                 </li>
                 <li className='pt-6'>
@@ -603,30 +601,30 @@ export default function Home() {
                         <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.715 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.715 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.745 13.1934 19.745C12.8933 19.745 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="#0A77FF" />
                       </svg>
                     </div>
-                    <p className='text-2xl pl-3'>Không ngừng hoàn thiện</p>
+                    <p className='md:text-2xl sm:text-lg xs:text-lg xxs:text-lg pl-3'>Không ngừng hoàn thiện</p>
                   </span>
                 </li>
               </ul>
 
-              <div className='flex justify-around pt-10'>
+              <div className='flex justify-around items-center pt-10'>
                 <div className='grid place-items-center'>
-                  <Image src={QRZalo} alt='qr-zalo' width={140} height={144.43} />
-                  <a href='https://zalo.me/1623670409453822014' target="_blank" className='text-2xl text-white font-bold'><button className='btn-zalo px-[69px] py-[10px]'>Zalo</button></a>
+                  <Image src={QRZalo} alt='qr-zalo' className='w-[140px] h-[144.43px]' />
+                  <a href='https://zalo.me/1623670409453822014' target="_blank" className='md:text-2xl sm:text-lg text-white font-bold'><button className='btn-zalo md:px-[69px] sm:px-[50px] xs:px-[48px] xxs:px-[48px] py-[10px]'>Zalo</button></a>
                 </div>
                 <div className='grid place-items-center'>
-                  <Image src={QRTele} alt='qr-tele' width={140} height={144.43} />
-                  <a href='https://t.me/betaEmarketbot' target="_blank" className='text-2xl text-white font-bold'><button className='btn-tele px-[38px] py-[10px]'>Telegram</button></a>
+                  <Image src={QRTele} alt='qr-tele' className='w-[140px] h-[144.43px]' />
+                  <a href='https://t.me/betaEmarketbot' target="_blank" className='md:text-2xl sm:text-lg text-white font-bold'><button className='btn-tele md:px-[38px] sm:px-[31px] xs:px-[31px] xxs:px-[30px] py-[10px]'>Telegram</button></a>
                 </div>
               </div>
             </div>
 
-            <div className='grid grid-cols-2 place-content-center'>
-              <div className='relative w-fit z-30'>
-                <Image src={Phone} alt='phone' className='relative z-10 w-[260px] h-[500px]' />
-                <Image src={GifPhone} alt='gif-phone' className='absolute top-[20px] left-[15px] w-[230px] h-[463px] rounded-xl z-0' />
+            <div className='flex justify-around items-center pt-14'>
+              <div className='relative w-fit h-fit z-30'>
+                <Image src={Phone} alt='phone' className='relative z-10 w-[260px] md:h-[500px] sm:h-[360px]' />
+                <Image src={GifPhone} alt='gif-phone' className='absolute md:top-[20px] md:left-[15px] md:w-[230px] md:h-[463px] sm:top-[12px] sm:left-[10px] sm:w-[163px] sm:h-[336px] xs:top-[10px] xs:left-[8px] xs:w-[140px] xs:h-[300px] xxs:top-[10px] xxs:left-[8px] xxs:w-[128px] xxs:h-[274px] rounded-xl z-0' />
               </div>
-              <div className='w-fit'>
-                <Image src={BMarketTele} alt='b-market-tele' className='w-[260px] h-[500px]' />
+              <div className='w-fit h-fit'>
+                <Image src={BMarketTele} alt='b-market-tele' className='w-[260px] md:h-[500px] sm:h-[360px]' />
               </div>
             </div>
           </div>
