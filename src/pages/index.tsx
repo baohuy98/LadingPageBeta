@@ -54,7 +54,7 @@ export default function Home() {
   const [slideIndex, setSlideIndex] = useState(1);
   const [slideIndexImg, setSlideIndexImg] = useState(1);
   const [slideIndexImg2, setSlideIndexImg2] = useState(1);
-  const [isSeeMore, setIsSeeMore] = useState(false)
+  const [isSeeMore, setIsSeeMore] = useState(true)
   const [isAccess, setIsAccess] = useState(false)
 
 
@@ -799,11 +799,11 @@ export default function Home() {
                       <h1>
                         B-Report:
                       </h1>
-                      <span>Chuyên gia phân</span>
+                      <span className='ml-2'>Chuyên gia phân</span>
                     </div>
                     <span >tích luôn bên bạn</span>
                   </div>
-                  <p className='text-center text-[30px] font-[400] text-white animate__animated animate__fadeIn '>Đáp ứng tiêu chí nhanh chóng, tiện lợi và dễ dàng tiếp cận, chúng tôi đã tích hợp các sản phẩm trên vào chatbot B-Market. Quý Nhà đầu tư hoàn toàn có thể dễ dàng tìm được lựa chọn "Báo cáo tự động"</p>
+                  <p className='text-center text-[30px] font-[400] text-white animate__animated animate__fadeIn '>Đáp ứng tiêu chí  <span className='font-bold'>nhanh chóng</span>, <span className='font-bold'>tiện lợi</span> và <span className="font-bold">dễ dàng tiếp cận</span> , chúng tôi đã tích hợp các sản phẩm trên vào chatbot B-Market. Quý Nhà đầu tư hoàn toàn có thể dễ dàng tìm được lựa chọn Báo cáo tự động</p>
                 </div>
                 <div className='content-right'>
                   <Image src={ImgReport3} width={605} height={550} alt='imgReport3' className='animate__animated animate__fadeInRight' />
@@ -846,7 +846,7 @@ export default function Home() {
                 <div className='flex flex-col justify-evenly h-full  '>
                   <div className={`${isSeeMore ? 'animate__animated animate__fadeInDown' : 'animate__animated animate__fadeInUp'} title overflow-hidden  text-white text-[45px] font-bold flex flex-col items-center `}>
                     <div className='flex '>
-                      <h1>B-Report:</h1> <span>Chuyên gia phân </span>
+                      <h1>B-Report:</h1> <span className='ml-2'>Chuyên gia phân </span>
                     </div>
                     <p>tích luôn bên bạn</p>
                   </div>
