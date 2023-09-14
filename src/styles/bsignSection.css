@@ -1,7 +1,5 @@
 .cssbuttons-io-button {
   font-family: inherit;
-  font-weight: 600;
-  font-size: 19px;
   padding: 6px 18px 6px 18px;
   color: white;
   background: #ad5389;
@@ -42,4 +40,80 @@
   font-style: italic;
   font-weight: 400;
   line-height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .text-sign::after {
+    content: "";
+    display: block;
+    width: 284px;
+    height: 10px;
+    background: linear-gradient(90deg, #007DC6 0.7%, #02A2FF 100%);
+    box-shadow: 3px 2px 18px 1px rgba(255, 255, 255, 0.20) inset;
+    margin-top: 22px;
+  }
+
+  .bsign-content {
+    color: #FFF;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 50px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .text-sign::after {
+    content: "";
+    display: block;
+    width: 240px;
+    height: 5px;
+    background: linear-gradient(90deg, #007DC6 0.7%, #02A2FF 100%);
+    box-shadow: 3px 2px 18px 1px rgba(255, 255, 255, 0.20) inset;
+    margin-top: 15px;
+  }
+
+  .bsign-content {
+    color: #FFF;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 30px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .text-sign::after {
+    content: "";
+    display: block;
+    width: 210px;
+    height: 5px;
+    background: linear-gradient(90deg, #007DC6 0.7%, #02A2FF 100%);
+    box-shadow: 3px 2px 18px 1px rgba(255, 255, 255, 0.20) inset;
+    margin-top: 13px;
+  }
+
+  .bsign-content {
+    color: #FFF;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 30px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .text-sign::after {
+    content: "";
+    display: block;
+    width: 170px;
+    height: 5px;
+    background: linear-gradient(90deg, #007DC6 0.7%, #02A2FF 100%);
+    box-shadow: 3px 2px 18px 1px rgba(255, 255, 255, 0.20) inset;
+    margin-top: 13px;
+  }
+
+  .bsign-content {
+    color: #FFF;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 30px;
+  }
 }
