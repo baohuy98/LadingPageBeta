@@ -786,7 +786,7 @@ export default function Home() {
         </section>
 
         {/* SECTION B-REPORT */}
-        <section className='breport_section bg-breport-section h-[750px] relative z-30 overflow-hidden '>
+        <section className='breport_section bg-breport-section h-[750px] relative z-30 overflow-hidden' id='breport_section'>
           {isAccess ?
             <div >
               <div className='content grid grid-cols-3'>
@@ -917,6 +917,7 @@ export default function Home() {
 
         </section>
 
+        {/* SECTION B-SIGNAL */}
         <section className='bsignal_section relative' id='bsignal_section'>
           <div className='p-7'>
             <div className='grid xl:grid-cols-2 lg:grid-cols-none'>
@@ -993,7 +994,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
       </main>
 
       {/* FOOTER */}
