@@ -868,7 +868,7 @@ export default function Home() {
                     <p>tích luôn bên bạn</p>
                   </div>
                   <div className='content'>
-                    {isSeeMore ? <p className='text-white font-[400] md:text-[30px] sm:text-lg xs:text-base xxs:text-[13px] animate__animated animate__fadeIn '>
+                    {isSeeMore ? <p className='text-white font-[400] md:text-[30px] sm:text-[18px] xs:text-[16px] xxs:text-[13px] animate__animated animate__fadeIn '>
                       Sản phẩm hợp tác giữa các nhà khoa học <br /> dữ liệu hàng đầu cùng những chuyên gia <br /> phân tích có nhiều năm kinh nghiệm trong <br /> lĩnh vực Tài chính - Chứng khoán...
                     </p> :
                       <div className='animate__animated animate__fadeIn'>
