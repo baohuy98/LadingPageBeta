@@ -320,17 +320,16 @@ export default function Home() {
         </section>
 
         {/* SECTION SOLUTION */}
-        {/* MỚi RESPON ĐẾN 435 */}
-        <section className='solution_section md:h-[960px] sm:h-[580px] relative z-10' id='solution_section'>
-          <div className='xl:hidden lg:block absolute lg:top-[50px] lg:left-[325px] md:top-[50px] md:left-[66px] sm:top-[30px] sm:left-[35px] z-20 animate__animated animate__fadeIn wow'>
-            <h2 className='font-bold text-white md:text-5xl sm:text-xl text-center opacity-80 md:mb-[40px] sm:mb-[20px]'>GIẢI PHÁP</h2>
-            <span className='font-bold text-white md:text-4xl sm:text-xl h-fit' >
+        <section className='solution_section md:h-[960px] sm:h-[580px] xs:h-[580px] xxs:h-[480px] relative z-10' id='solution_section'>
+          <div className='xl:hidden lg:block absolute lg:top-[50px] lg:left-[325px] md:top-[50px] md:left-[66px] sm:top-[30px] sm:left-[35px] xs:top-[35px] xs:left-[15px] xxs:top-[40px] xxs:left-[15px] z-20 animate__animated animate__fadeIn wow'>
+            <h2 className='font-bold text-white md:text-5xl sm:text-3xl xs:text-2xl xxs:text-xl text-center opacity-80 md:mb-[40px] sm:mb-[20px] xs:mb-[10px] xxs:mb-[10px]'>GIẢI PHÁP</h2>
+            <span className='font-bold text-white md:text-4xl sm:text-[22px] xs:text-xl xxs:text-base h-fit' >
               PHÂN TÍCH DỮ LIỆU TÀI <br /> CHÍNH & GIAO DỊCH  <br /> TRONG THỜI ĐẠI 4.0
             </span>
           </div>
-          <div className='solution_section-left rotate-[15deg] xl:translate-x-[-21%] lg:translate-x-[-14%] md:translate-x-[-21%] sm:translate-x-[-35%]'>
-            <div className={`bg-solution-section w-[80%] h-[1111px] rounded-[60px] flex flex-col justify-center items-center animate__animated animate__rotateInDownLeft wow`}>
-              <div className='rotate-[-15deg] translate-x-[15%] translate-y-[-15%] animate__animated animate__fadeIn xl:block lg:hidden md:hidden sm:hidden'>
+          <div className='solution_section-left sm:rotate-[15deg] xs:rotate-[20deg] xxs:rotate-[20deg] xl:translate-x-[-21%] lg:translate-x-[-14%] md:translate-x-[-21%] sm:translate-x-[-35%] xs:translate-x-[-42%] xxs:translate-x-[-53%]'>
+            <div className={`bg-solution-section w-[80%] sm:h-[1111px] xs:h-[900px] xxs:h-[900px] rounded-[60px] flex flex-col justify-center items-center animate__animated animate__rotateInDownLeft wow`}>
+              <div className='rotate-[-15deg] translate-x-[15%] translate-y-[-15%] animate__animated animate__fadeIn xl:block lg:hidden md:hidden sm:hidden xs:hidden xxs:hidden'>
                 <h2 className='font-bold text-white text-5xl text-center opacity-80 mb-[40px]'>GIẢI PHÁP</h2>
                 <span className='font-bold text-white text-6xl h-fit' >
                   PHÂN TÍCH DỮ LIỆU TÀI <br /> CHÍNH & GIAO DỊCH  <br /> TRONG THỜI ĐẠI 4.0
@@ -338,11 +337,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="solution_section-right md:grid sm:hidden grid-cols-2 absolute xl:top-[30%] xl:right-[2%] lg:top-[30%] lg:right-[17%] md:top-[30%] md:right-[8%] sm:top-[20%] sm:right-[20%] gap-y-5 gap-x-10">
-            <div
-              onMouseOver={() => {
-                setIsHoveredImg1(true)
-              }}
+          <div className="solution_section-right md:grid sm:hidden xs:hidden xxs:hidden grid-cols-2 absolute xl:top-[30%] xl:right-[2%] lg:top-[30%] lg:right-[17%] md:top-[30%] md:right-[8%] sm:top-[20%] sm:right-[20%] gap-y-5 gap-x-10">
+            <div onMouseOver={() => {
+              setIsHoveredImg1(true)
+            }}
               onMouseOut={() => {
                 setIsHoveredImg1(false)
               }} className={`item-card_1 z-10 animate__animated animate__fadeInDown wow`}>
@@ -465,7 +463,7 @@ export default function Home() {
               }
             </div>
           </div>
-          <div className='md:hidden sm:block absolute top-[160px] w-full'>
+          <div className='md:hidden sm:block absolute xs:top-[160px] xxs:top-[130px] w-full'>
             <Swiper navigation={true} modules={[Navigation]}>
               <SwiperSlide>
                 <div onMouseOver={() => {
@@ -473,24 +471,24 @@ export default function Home() {
                 }}
                   onMouseOut={() => {
                     setIsHoveredImg1(false)
-                  }} className={`item-card_1 z-10 animate__animated animate__fadeInDown wow`}>
+                  }} className={`item-card_1 z-10 animate__animated animate__fadeInDown wow grid place-items-center`}>
                   {!isHoveredImg1 ?
-                    <div className={`${section2CSS.item_cardBackground} w-[305px] flex flex-col justify-between items-center relative p-5 m-[60px]`}>
+                    <div className={`${section2CSS.item_cardBackground} sm:w-[305px] xs:w-[250px] flex flex-col justify-between items-center relative p-5 m-[60px]`}>
                       <Image
                         src={Item1}
                         width={200}
                         height={150}
                         alt="img-item1"
                       ></Image>
-                      <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
+                      <span className="text-[#01A7FB] font-bold sm:text-[30px] xs:text-[25px] mt-5">Web Platform</span>
                     </div>
                     :
-                    <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover1} ${isHoveredImg1 ? 'animate__animated animate__fadeIn' : ''} p-[10px] m-[40px] h-[305px] w-[305px] relative`}>
+                    <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover1} ${isHoveredImg1 ? 'animate__animated animate__fadeIn' : ''} my-[60px] xs:h-[305px] xxs:h-[250px] sm:w-[305px] xs:w-[250px] xxs:w-[200px] relative`}>
                       <div className='flex flex-col justify-between items-center h-full  p-5  ' >
-                        <h1 className='text-[#FEBC08] text-[40px] font-bold'>
+                        <h1 className='text-[#FEBC08] xs:text-[40px] xxs:text-3xl font-bold'>
                           B-Info
                         </h1>
-                        <span className='md:text-[20px] sm:text-base font-semibold text-white'>Webapp đầy đủ và toàn diện <br /> với các công cụ hỗ trợ phân <br /> tích dữ & quan sát thị trường</span>
+                        <span className='md:text-[20px] sm:text-base xs:text-base xxs:text-xs font-semibold text-white'>Webapp đầy đủ và toàn diện <br /> với các công cụ hỗ trợ phân <br /> tích dữ & quan sát thị trường</span>
                         <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
                           <a className='mr-2' href="https://binfo.bsi.com.vn/" target='_blank'>Xem thêm  </a>
                           <AiOutlineArrowRight />
@@ -500,29 +498,30 @@ export default function Home() {
                   }
                 </div>
               </SwiperSlide>
+
               <SwiperSlide>
                 <div onMouseOver={() => {
                   setIsHoveredImg2(true)
                 }} onMouseOut={() => {
                   setIsHoveredImg2(false)
-                }} className={` item-card_2  z-10 animate__animated animate__fadeInDown wow`}>
+                }} className={` item-card_2  z-10 animate__animated animate__fadeInDown wow grid place-items-center`}>
                   {!isHoveredImg2 ?
-                    <div className={`${section2CSS.item_cardBackground} w-[305px] flex flex-col justify-between items-center relative p-5 m-[60px]`}>
+                    <div className={`${section2CSS.item_cardBackground} sm:w-[305px] xs:w-[250px] flex flex-col justify-between items-center relative p-5 m-[60px]`}>
                       <Image
                         src={Item2}
                         width={200}
                         height={150}
                         alt="img-item1"
                       ></Image>
-                      <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Social Platform</span>
+                      <span className="text-[#01A7FB] font-bold sm:text-[30px] xs:text-[25px] mt-5">Social Platform</span>
                     </div>
                     :
-                    <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover2} ${isHoveredImg2 ? 'animate__animated animate__fadeIn' : ''} p-[10px] m-[40px] h-[305px] w-[305px] relative`}>
+                    <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover2} ${isHoveredImg2 ? 'animate__animated animate__fadeIn' : ''} my-[60px] xs:h-[305px] xxs:h-[250px] sm:w-[305px] xs:w-[250px] xxs:w-[200px] relative`}>
                       <div className='flex flex-col justify-between items-center h-full  p-5  ' >
-                        <h1 className='text-[#FEBC08] text-[40px] font-bold'>
+                        <h1 className='text-[#FEBC08] xs:text-[40px] xxs:text-3xl font-bold'>
                           B-Market
                         </h1>
-                        <span className='md:text-[20px] sm:text-base font-semibold text-white'>Sự tiện lợi giành cho những <br /> Nhà đầu tư bận rộn  chatbot <br />  tự động hoàn toàn, dữ liệu <br /> Real-time trên nền tảng Zalo <br /> và Telegram</span>
+                        <span className='md:text-[20px] sm:text-base xs:text-base xxs:text-xs font-semibold text-white'>Sự tiện lợi giành cho những <br /> Nhà đầu tư bận rộn  chatbot <br />  tự động hoàn toàn, dữ liệu <br /> Real-time trên nền tảng Zalo <br /> và Telegram</span>
                         <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
                           <a className='mr-2' href="#bmarket_section">Xem thêm  </a>
                           <AiOutlineArrowRight />
@@ -532,29 +531,30 @@ export default function Home() {
                   }
                 </div>
               </SwiperSlide>
+
               <SwiperSlide>
                 <div onMouseOver={() => {
                   setIsHoveredImg3(true)
                 }} onMouseOut={() => {
                   setIsHoveredImg3(false)
-                }} className={` item-card_3 z-10 animate__animated animate__fadeInUp wow`}>
+                }} className={` item-card_3 z-10 animate__animated animate__fadeInUp wow grid place-items-center`}>
                   {!isHoveredImg3 ?
-                    <div className={`${section2CSS.item_cardBackground} w-[305px] flex flex-col justify-between items-center relative p-5 m-[60px]`}>
+                    <div className={`${section2CSS.item_cardBackground} sm:w-[305px] xs:w-[250px] flex flex-col justify-between items-center relative p-5 m-[60px]`}>
                       <Image
                         src={Item3}
                         width={200}
                         height={150}
                         alt="img-item1"
                       ></Image>
-                      <span className="text-[#01A7FB] font-bold text-[30px] mt-5">AI Quick Report</span>
+                      <span className="text-[#01A7FB] font-bold sm:text-[30px] xs:text-[25px] mt-5">AI Quick Report</span>
                     </div>
                     :
-                    <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover3} ${isHoveredImg3 ? 'animate__animated animate__fadeIn' : ''} p-[10px] m-[40px] h-[305px] w-[305px] relative`}>
+                    <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover3} ${isHoveredImg3 ? 'animate__animated animate__fadeIn' : ''} my-[60px] xs:h-[305px] xxs:h-[250px] sm:w-[305px] xs:w-[250px] xxs:w-[200px] relative`}>
                       <div className='flex flex-col justify-between items-center h-full  p-5  ' >
-                        <h1 className='text-[#FEBC08] text-[40px] font-bold'>
+                        <h1 className='text-[#FEBC08] xs:text-[40px] xxs:text-3xl font-bold'>
                           B-Report
                         </h1>
-                        <span className='md:text-[20px] sm:text-base font-semibold text-white'>Hệ thống AI phản hồi báo <br /> cáo đa dạng, trực quan, <br /> nhanh chóng về giao dịch <br /> thị trường & doanh nghiệp.</span>
+                        <span className='md:text-[20px] sm:text-base xs:text-base xxs:text-xs font-semibold text-white'>Hệ thống AI phản hồi báo <br /> cáo đa dạng, trực quan, <br /> nhanh chóng về giao dịch <br /> thị trường & doanh nghiệp.</span>
                         <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
                           <a className='mr-2' href="#breport_section">Xem thêm  </a>
                           <AiOutlineArrowRight />
@@ -564,29 +564,30 @@ export default function Home() {
                   }
                 </div>
               </SwiperSlide>
+
               <SwiperSlide>
                 <div onMouseOver={() => {
                   setIsHoveredImg4(true)
                 }} onMouseOut={() => {
                   setIsHoveredImg4(false)
-                }} className={` item-card_4 z-10 animate__animated animate__fadeInUp wow`}>
+                }} className={` item-card_4 z-10 animate__animated animate__fadeInUp wow grid place-items-center`}>
                   {!isHoveredImg4 ?
-                    <div className={`${section2CSS.item_cardBackground} w-[305px] flex flex-col justify-between items-center relative p-5 m-[60px]`}>
+                    <div className={`${section2CSS.item_cardBackground} sm:w-[305px] xs:w-[250px] flex flex-col justify-between items-center relative p-5 m-[60px]`}>
                       <Image
                         src={Item4}
                         width={200}
                         height={150}
                         alt="img-item1"
                       ></Image>
-                      <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Market Tracker</span>
+                      <span className="text-[#01A7FB] font-bold sm:text-[30px] xs:text-[25px] mt-5">Market Tracker</span>
                     </div>
                     :
-                    <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover4} ${isHoveredImg4 ? 'animate__animated animate__fadeIn' : ''} p-[10px] m-[40px] h-[305px] w-[305px] relative`}>
+                    <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover4} ${isHoveredImg4 ? 'animate__animated animate__fadeIn' : ''} my-[60px] xs:h-[305px] xxs:h-[250px] sm:w-[305px] xs:w-[250px] xxs:w-[200px] relative`}>
                       <div className='flex flex-col justify-between items-center h-full  p-5  ' >
-                        <h1 className='text-[#FEBC08] text-[40px] font-bold'>
+                        <h1 className='text-[#FEBC08] xs:text-[40px] xxs:text-3xl font-bold'>
                           B-Signal
                         </h1>
-                        <span className='md:text-[20px] sm:text-base font-semibold text-white'>Hệ thống tín hiệu theo dõi & <br /> thông báo cập nhật mọi <br /> biến động thị trường</span>
+                        <span className='md:text-[20px] sm:text-base xs:text-base xxs:text-xs font-semibold text-white'>Hệ thống tín hiệu theo dõi & <br /> thông báo cập nhật mọi <br /> biến động thị trường</span>
                         <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
                           <a className='mr-2' href="#bsignal_section">Xem thêm  </a>
                           <AiOutlineArrowRight />
@@ -786,72 +787,88 @@ export default function Home() {
         </section>
 
         {/* SECTION B-REPORT */}
-        <section className='breport_section bg-breport-section h-[750px] relative z-30 overflow-hidden' id='breport_section'>
+        <section className='breport_section bg-breport-section relative z-30 overflow-hidden' id='breport_section'>
           {isAccess ?
-            <div >
-              <div className='content grid grid-cols-3'>
-                <div className='content-left'>
-                  <Image src={ImgReport2} width={605} height={550} alt='imgReport2' className='animate__animated animate__fadeInLeft' />
+            <div>
+              <div className='content grid xl:grid-cols-3 lg:grid-cols-none xl:grid-none-2 lg:grid-rows-no2ne md:py-[121px] sm:py-[80px] xs:py-[80px] xxs:py-[80px]'>
+                <div className='content-left xl:block lg:hidden md:hidden sm:hidden xs:hidden xxs:hidden'>
+                  <Image src={ImgReport2} alt='imgReport2' className='h-[530px] animate__animated animate__fadeInLeft' />
                 </div>
-                <div className='content-mid flex flex-col justify-evenly'>
-                  <div className='text-white text-[45px] font-bold flex flex-col justify-center items-center animate__animated animate__fadeInRight'>
-                    <div className='flex '>
-                      <h1>
-                        B-Report:
-                      </h1>
-                      <span className='ml-2'>Chuyên gia phân</span>
+
+                <div className='content-mid flex flex-col justify-evenly xl:px-0 lg:px-[130px] md:px-[100px] sm:px-[20px] xs:px-[20px] xxs:px-[20px]'>
+                  <div className='text-white md:text-[36px] sm:text-3xl xs:text-2xl xxs:text-xl font-bold flex flex-col justify-center items-center animate__animated animate__fadeInRight'>
+                    <div className='flex'>
+                      <h1>B-Report:</h1><span className='ml-2'>Chuyên gia phân</span>
                     </div>
                     <span >tích luôn bên bạn</span>
                   </div>
-                  <p className='text-center text-[30px] font-[400] text-white animate__animated animate__fadeIn '>Đáp ứng tiêu chí  <span className='font-bold'>nhanh chóng</span>, <span className='font-bold'>tiện lợi</span> và <span className="font-bold">dễ dàng tiếp cận</span> , chúng tôi đã tích hợp các sản phẩm trên vào chatbot B-Market. Quý Nhà đầu tư hoàn toàn có thể dễ dàng tìm được lựa chọn Báo cáo tự động</p>
+                  <p className='text-center md:text-[29px] sm:text-xl font-[400] text-white animate__animated animate__fadeIn pt-3'>Đáp ứng tiêu chí  <span className='font-bold'>nhanh chóng</span>, <span className='font-bold'>tiện lợi</span> và <span className="font-bold">dễ dàng tiếp cận</span> , chúng tôi đã tích hợp các sản phẩm trên vào chatbot B-Market. Quý Nhà đầu tư hoàn toàn có thể dễ dàng tìm được lựa chọn Báo cáo tự động</p>
                 </div>
-                <div className='content-right'>
-                  <Image src={ImgReport3} width={605} height={550} alt='imgReport3' className='animate__animated animate__fadeInRight' />
+
+                <div className='content-right xl:block lg:hidden md:hidden sm:hidden xs:hidden xxs:hidden'>
+                  <Image src={ImgReport3} alt='imgReport3' className='h-[530px] animate__animated animate__fadeInRight' />
                   <div className='flex items-end justify-end w-[80%]'>
                     <button onClick={() => {
                       setIsAccess(!isAccess)
                       setIsSeeMore(!isSeeMore)
-                    }} className='text-white text-[25px] font-[300] '>
+                    }} className='text-white text-[25px] font-[300] italic'>
                       Thu gọn
                     </button>
+                  </div>
+                </div>
+
+                <div className='lg:grid md:grid sm:grid xs:grid xxs:grid grid-cols-2 xl:hidden'>
+                  <div className='content-left'>
+                    <Image src={ImgReport2} alt='imgReport2' className=' animate__animated animate__fadeInLeft' />
+                  </div>
+                  <div className='content-right'>
+                    <Image src={ImgReport3} alt='imgReport3' className=' animate__animated animate__fadeInRight' />
+                    <div className='flex items-end justify-end w-[80%]'>
+                      <button onClick={() => {
+                        setIsAccess(!isAccess)
+                        setIsSeeMore(!isSeeMore)
+                      }} className='text-white text-[25px] font-[300] italic'>
+                        Thu gọn
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             :
-            <div className='grid' style={{ gridTemplateColumns: '1fr 2.5fr' }}>
-              <div className='breport_section-left relative w-full   '>
+            <div className='grid xl:grid-cols-2 lg:grid-cols-none xl:grid-rows-none lg:grid-rows-2 md:grid-rows-2 p-[30px]'>
+              <div className='breport_section-left relative w-full'>
                 {
                   isSeeMore ?
-                    <div className=''>
-                      <Image src={ImgHuman} alt='imgHuman' width={346} height={404} className='absolute top-[225px] left-[65px] animate__animated animate__fadeInUp ' />
-                      <Image src={ImgBigData} alt='imgBigData' width={498} height={467} className='absolute top-[185px] left-[230px] z-[-1]  animate__animated animate__fadeInUp' />
-                      <Image src={ImgDataScience} alt='imgDataSc' className='absolute  top-[150px] left-[270px] animate__animated animate__fadeInUp ' />
-                      <Image src={ImgRoboAI} alt='imgRobo' width={371} height={316} className='absolute top-[83px] left-[415px] animate__animated animate__fadeInUp ' />
+                    <div className='md:block sm:hidden xs:hidden xxs:hidden'>
+                      <Image src={ImgHuman} alt='imgHuman' className='w-[346px] h-[404px] absolute top-[225px] left-[65px] animate__animated animate__fadeInUp ' />
+                      <Image src={ImgBigData} alt='imgBigData' className='w-[498px] h-[467px] absolute top-[185px] left-[230px] z-[-1]  animate__animated animate__fadeInUp' />
+                      <Image src={ImgDataScience} alt='imgDataSc' className='absolute top-[150px] left-[270px] animate__animated animate__fadeInUp ' />
+                      <Image src={ImgRoboAI} alt='imgRobo' className='w-[371px] h-[316px] absolute top-[83px] left-[415px] animate__animated animate__fadeInUp ' />
                     </div>
                     :
-                    <div className='flex flex-col justify-center items-center translate-x-[135px] animate__animated animate__fadeIn'>
-                      <Image src={ImgReport} alt='imgReport1' />
+                    <div className='flex flex-col justify-center items-center animate__animated animate__fadeIn '>
+                      <Image src={ImgReport} alt='imgReport1' className='w-[700px] h-[712px] md:block sm:hidden xs:hidden xxs:hidden' />
                       <button onClick={
                         () => {
                           setIsAccess(!isAccess)
                         }
                       }>
-                        <span className='text-white font-[300] text-[25px] '>Tôi truy cập như thế nào ?</span>
+                        <span className='text-white font-[300] xs:text-[25px] xxs:text-[15px] italic'>Tôi truy cập như thế nào ?</span>
                       </button>
                     </div>
                 }
               </div>
-              <div className='breport_section-right h-[750px] flex  flex-col justify-center items-center '>
-                <div className='flex flex-col justify-evenly h-full  '>
-                  <div className={`${isSeeMore ? 'animate__animated animate__fadeInDown' : 'animate__animated animate__fadeInUp'} title overflow-hidden  text-white text-[45px] font-bold flex flex-col items-center `}>
+              <div className='breport_section-right md:h-[750px] sm:h-[580px] xs:h-[580px] xxs:h-[480px] flex  flex-col justify-center items-center '>
+                <div className='flex flex-col justify-evenly h-full'>
+                  <div className={`${isSeeMore ? 'animate__animated animate__fadeInDown' : 'animate__animated animate__fadeInUp'} title overflow-hidden text-white md:text-[45px] sm:text-[25px] xs:text-[22px] xxs:text-[20px] font-bold flex flex-col items-center `}>
                     <div className='flex '>
                       <h1>B-Report:</h1> <span className='ml-2'>Chuyên gia phân </span>
                     </div>
                     <p>tích luôn bên bạn</p>
                   </div>
                   <div className='content'>
-                    {isSeeMore ? <p className='text-white font-[400] text-[30px] animate__animated animate__fadeIn '>
+                    {isSeeMore ? <p className='text-white font-[400] md:text-[30px] sm:text-lg xs:text-base xxs:text-[13px] animate__animated animate__fadeIn '>
                       Sản phẩm hợp tác giữa các nhà khoa học <br /> dữ liệu hàng đầu cùng những chuyên gia <br /> phân tích có nhiều năm kinh nghiệm trong <br /> lĩnh vực Tài chính - Chứng khoán...
                     </p> :
                       <div className='animate__animated animate__fadeIn'>
@@ -860,28 +877,28 @@ export default function Home() {
                             <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.7149 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.7149 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.7449 13.1934 19.7449C12.8933 19.7449 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L16.4185 13.8046L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="white" />
                             <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.7149 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.7149 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.7449 13.1934 19.7449C12.8933 19.7449 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L16.4185 13.8046L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="white" />
                           </svg>
-                          <p className='text-white text-[30px] font-[300] w-[90%]'>Thị trường, ngành, tài chính doanh <br /> nghiệp, phan tích kỹ thuật, tổng hợp <br /> giao dịch...</p>
+                          <p className='text-white md:text-[30px] sm:text-[20px] xs:text-base xxs:text-sm pl-2 font-[300] w-[90%]'>Thị trường, ngành, tài chính doanh <br /> nghiệp, phan tích kỹ thuật, tổng hợp <br /> giao dịch...</p>
                         </div>
                         <div className='flex justify-between items-center'>
                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
                             <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.7149 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.7149 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.7449 13.1934 19.7449C12.8933 19.7449 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L16.4185 13.8046L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="white" />
                             <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.7149 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.7149 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.7449 13.1934 19.7449C12.8933 19.7449 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L16.4185 13.8046L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="white" />
                           </svg>
-                          <p className='text-white text-[30px] font-[300] w-[90%]'>Đầy đủ toàn bộ cho 1623 mã cổ phiếu <br /> niêm yết trên sàn </p>
+                          <p className='text-white md:text-[30px] sm:text-[20px] xs:text-base xxs:text-sm pl-2 font-[300] w-[90%]'>Đầy đủ toàn bộ cho 1623 mã cổ phiếu <br /> niêm yết trên sàn </p>
                         </div>
                         <div className='flex justify-between items-center'>
                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
                             <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.7149 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.7149 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.7449 13.1934 19.7449C12.8933 19.7449 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L16.4185 13.8046L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="white" />
                             <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.7149 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.7149 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.7449 13.1934 19.7449C12.8933 19.7449 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L16.4185 13.8046L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="white" />
                           </svg>
-                          <p className='text-white text-[30px] font-[300] w-[90%]'>Cung cấp thông tin toàn diện về cổ <br /> phiếu, cơ hội và sự cạnh tranh trong <br /> thời gian thực.</p>
+                          <p className='text-white md:text-[30px] sm:text-[20px] pl-2 font-[300] w-[90%]'>Cung cấp thông tin toàn diện về cổ <br /> phiếu, cơ hội và sự cạnh tranh trong <br /> thời gian thực.</p>
                         </div>
                         <div className='flex justify-between items-center'>
                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="31" viewBox="0 0 30 31" fill="none">
                             <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.7149 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.7149 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.7449 13.1934 19.7449C12.8933 19.7449 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L16.4185 13.8046L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="white" />
                             <path d="M29.3343 13.1146L27.2942 10.7444C26.9042 10.2944 26.5892 9.45432 26.5892 8.85428V6.30413C26.5892 4.71403 25.2841 3.40895 23.694 3.40895H21.1438C20.5588 3.40895 19.7037 3.09394 19.2537 2.70391L16.8836 0.66379C15.8485 -0.221263 14.1534 -0.221263 13.1033 0.66379L10.7481 2.71891C10.2981 3.09394 9.44307 3.40895 8.85803 3.40895H6.26288C4.67278 3.40895 3.3677 4.71403 3.3677 6.30413V8.86928C3.3677 9.45432 3.05268 10.2944 2.67766 10.7444L0.652539 13.1296C-0.217513 14.1646 -0.217513 15.8447 0.652539 16.8798L2.67766 19.2649C3.05268 19.7149 3.3677 20.555 3.3677 21.14V23.7052C3.3677 25.2953 4.67278 26.6004 6.26288 26.6004H8.85803C9.44307 26.6004 10.2981 26.9154 10.7481 27.3054L13.1183 29.3455C14.1534 30.2306 15.8485 30.2306 16.8986 29.3455L19.2687 27.3054C19.7187 26.9154 20.5588 26.6004 21.1588 26.6004H23.709C25.2991 26.6004 26.6042 25.2953 26.6042 23.7052V21.155C26.6042 20.57 26.9192 19.7149 27.3092 19.2649L29.3493 16.8948C30.2194 15.8597 30.2194 14.1496 29.3343 13.1146ZM21.2338 12.1695L13.9884 19.4149C13.7784 19.6249 13.4934 19.7449 13.1934 19.7449C12.8933 19.7449 12.6083 19.6249 12.3983 19.4149L8.76803 15.7847C8.333 15.3497 8.333 14.6296 8.76803 14.1946C9.20305 13.7596 9.9231 13.7596 10.3581 14.1946L13.1934 17.0298L16.4185 13.8046L19.6437 10.5794C20.0788 10.1444 20.7988 10.1444 21.2338 10.5794C21.6689 11.0144 21.6689 11.7345 21.2338 12.1695Z" fill="white" />
                           </svg>
-                          <p className='text-white text-[30px] font-[300] w-[90%]'>
+                          <p className='text-white md:text-[30px] sm:text-[20px] xs:text-base xxs:text-sm pl-2 font-[300] w-[90%]'>
                             Hoàn toàn loại trừ cảm tính và thiên <br /> lệch trong hoạt động phân tích. Hỗ <br />
                             trợ 24/7.
                           </p>
@@ -901,20 +918,17 @@ export default function Home() {
                         () => {
                           setIsSeeMore(!isSeeMore)
                         }
-                      } className='text-white text-[25px] font-[300]  '>Xem thêm </button> : <button onClick={
+                      } className='text-white text-[25px] font-[300] italic'>Xem thêm </button> : <button onClick={
                         () => {
                           setIsSeeMore(!isSeeMore)
                         }
-                      } className='text-white text-[25px] font-[300] animate__animated animate__fadeIn'>Thu gọn </button>}
+                      } className='text-white text-[25px] font-[300] animate__animated animate__fadeIn italic'>Thu gọn </button>}
                     </button>
                   </div>
                 </div>
               </div>
             </div>
-
           }
-
-
         </section>
 
         {/* SECTION B-SIGNAL */}
