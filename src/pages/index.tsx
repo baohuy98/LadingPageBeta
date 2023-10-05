@@ -163,6 +163,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://www.example.com/your-page" />
         <link rel="preload" href="https://resource.bsi.com.vn/resources/landing-page/background-section1.jpg" as="image" />
+
       </Head>
 
       {/* HEADER */}
