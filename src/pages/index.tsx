@@ -158,10 +158,9 @@ export default function Home() {
           name="keywords"
           content="đầu tư chứng khoán, thông tin chứng khoán, phân tích chứng khoán, B-Market, B-Info, B-Report, B-Signal,"
         />
-        {/* <meta
-          name="keywords"
-          content="B-Market, B-Info, B-Report, B-Signal, "
-        /> */}
+
+
+        <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://www.example.com/your-page" />
         <link rel="preload" href="https://resource.bsi.com.vn/resources/landing-page/background-section1.jpg" as="image" />
       </Head>
@@ -824,10 +823,10 @@ export default function Home() {
                 {
                   isSeeMore ?
                     <div className=''>
-                      <Image src={ImgHuman} alt='imgHuman' width={346} height={404} className='absolute top-[225px] left-[65px] animate__animated animate__fadeInUp ' />
-                      <Image src={ImgBigData} alt='imgBigData' width={498} height={467} className='absolute top-[185px] left-[230px] z-[-1]  animate__animated animate__fadeInUp' />
-                      <Image src={ImgDataScience} alt='imgDataSc' className='absolute  top-[150px] left-[270px] animate__animated animate__fadeInUp ' />
-                      <Image src={ImgRoboAI} alt='imgRobo' width={371} height={316} className='absolute top-[83px] left-[415px] animate__animated animate__fadeInUp ' />
+                      <Image src={ImgHuman} alt='imgHuman' width={346} height={404} className='absolute top-[225px] left-[65px] animate__animated animate__fadeInUp wow ' />
+                      <Image src={ImgBigData} alt='imgBigData' width={498} height={467} className='absolute top-[185px] left-[230px] z-[-1]  animate__animated animate__fadeInUp wow' />
+                      <Image src={ImgDataScience} alt='imgDataSc' className='absolute  top-[150px] left-[270px] animate__animated animate__fadeInUp wow' />
+                      <Image src={ImgRoboAI} alt='imgRobo' width={371} height={316} className='absolute top-[83px] left-[415px] animate__animated animate__fadeInUp wow ' />
                     </div>
                     :
                     <div className='flex flex-col justify-center items-center translate-x-[135px] animate__animated animate__fadeIn'>
@@ -844,14 +843,14 @@ export default function Home() {
               </div>
               <div className='breport_section-right h-[750px] flex  flex-col justify-center items-center '>
                 <div className='flex flex-col justify-evenly h-full  '>
-                  <div className={`${isSeeMore ? 'animate__animated animate__fadeInDown' : 'animate__animated animate__fadeInUp'} title overflow-hidden  text-white text-[45px] font-bold flex flex-col items-center `}>
+                  <div className={`${isSeeMore ? 'animate__animated animate__fadeInDown' : 'animate__animated animate__fadeInUp'} title overflow-hidden wow  text-white text-[45px] font-bold flex flex-col items-center `}>
                     <div className='flex '>
                       <h1>B-Report:</h1> <span className='ml-2'>Chuyên gia phân </span>
                     </div>
                     <p>tích luôn bên bạn</p>
                   </div>
                   <div className='content'>
-                    {isSeeMore ? <p className='text-white font-[400] text-[30px] animate__animated animate__fadeIn '>
+                    {isSeeMore ? <p className='text-white font-[400] text-[30px] animate__animated animate__fadeIn  wow'>
                       Sản phẩm hợp tác giữa các nhà khoa học <br /> dữ liệu hàng đầu cùng những chuyên gia <br /> phân tích có nhiều năm kinh nghiệm trong <br /> lĩnh vực Tài chính - Chứng khoán...
                     </p> :
                       <div className='animate__animated animate__fadeIn'>
@@ -901,11 +900,11 @@ export default function Home() {
                         () => {
                           setIsSeeMore(!isSeeMore)
                         }
-                      } className='text-white text-[25px] font-[300]  '>Xem thêm </button> : <button onClick={
+                      } className='text-white text-[25px] font-[300] animate__animated animate__fadeIn wow  '>Xem thêm </button> : <button onClick={
                         () => {
                           setIsSeeMore(!isSeeMore)
                         }
-                      } className='text-white text-[25px] font-[300] animate__animated animate__fadeIn'>Thu gọn </button>}
+                      } className='text-white text-[25px] font-[300] '>Thu gọn </button>}
                     </button>
                   </div>
                 </div>
