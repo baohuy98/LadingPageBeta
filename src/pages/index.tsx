@@ -38,7 +38,7 @@ import ImgDataScience from '../../public/assets/image/data-science.png'
 import ImgReport from '../../public/assets/image/report-4.png'
 import ImgReport2 from '../../public/assets/image/report-5.png'
 import ImgReport3 from '../../public/assets/image/report-6.png'
-
+import MarginImg from '../../public/assets/image/margin.png'
 import 'animate.css';
 import { Transition } from '@headlessui/react'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -104,7 +104,7 @@ export default function Home() {
     if (n < 1) { setSlideIndexImg(slidesImg.length); }
 
     for (i = 0; i < slidesImg.length; i++) {
-      slidesImg[i].style.display = "none";
+      slidesImg[i].style.display = "none"
     }
 
     slidesImg[slideIndexImg - 1].style.display = "block";
@@ -1013,6 +1013,9 @@ export default function Home() {
       {/* FOOTER */}
       <footer>
         <section className='contact_section' id='contact_section'>
+          <a href="">
+            <Image src={MarginImg} alt='marginImg' className='w-full' />
+          </a>
           <div className="bg-[url('../../public/assets/image/footer-img.png')] h-full bg-center bg-[length:100%_500px]">
             <div className='text-center pt-[80px]'>
               <div className='xl:text-[55px] lg:text-4xl md:text-3xl sm:text-lg xs:text-[17px] xxs:text-sm font-bold'>
