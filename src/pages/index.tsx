@@ -1013,7 +1013,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer>
         <section className='contact_section' id='contact_section'>
-          <a href="https://www.bsi.com.vn/vn/tin-tuc/tin-va-su-kien/lai-margin-9-9-phi-giao-dich-0-1">
+          <a href="https://www.bsi.com.vn/vn/tin-tuc/tin-va-su-kien/lai-margin-9-9-phi-giao-dich-0-1" target='_blank'>
             <Image src={MarginImg} alt='marginImg' className='w-full' />
           </a>
           <div className="bg-[url('../../public/assets/image/footer-img.png')] h-full bg-center bg-[length:100%_500px]">
