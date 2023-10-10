@@ -1020,9 +1020,12 @@ export default function Home() {
               <Image src={ImgMargin} alt='imgMargin' />
             </div>
             <div style={{ boxShadow: ' 0 0 30px 5px rgba(0, 142, 236, 0.815)' }} className='btnMargin absolute bottom-[13%] left-[25%] w-[10%] h-[10%] rounded-full bg-transparent z-10 border-[2px] border-white grid place-items-center '>
-              <button className='text-white  font-semibold w-full h-full 2xl:text-[20px] xl:text-[13px] lg:text-[10px] lg:block md:hidden xs:hidden xxs:hidden'>
-                TÌM HIỂU NGAY
-              </button>
+              <a href="https://www.bsi.com.vn/vn/tin-tuc/tin-va-su-kien/lai-margin-9-9-phi-giao-dich-0-1" target='_blank'>
+                <button className='text-white  font-semibold w-full h-full 2xl:text-[20px] xl:text-[13px] lg:text-[10px] lg:block md:hidden xs:hidden xxs:hidden'>
+
+                  TÌM HIỂU NGAY
+                </button>
+              </a>
               <button className='text-white  font-semibold w-full h-full  text-[5px] md:block lg:hidden xs:text-[5px] md:text-[8px] xs:block  xxs:text-[3px] '>
                 XEM THÊM
               </button>
