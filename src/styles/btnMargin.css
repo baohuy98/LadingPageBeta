@@ -1,54 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-svg {
-  display: inline;
-}
-
-/* body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-.animate__animated.animate__rotateInDownLeft {
-  --animate-duration: 1.5s;
-}
-.animate__animated.animate__fadeInDown {
-  --animate-duration: 1.5s;
-}
-
-.animate__animated.animate__fadeInUp {
-  --animate-duration: 1.5s;
-}
-
 .btnMargin {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
   border: 1px solid rgb(61, 106, 255);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
   color: #fff;
   overflow: hidden;
   box-shadow: 0 0 0 0 transparent;
@@ -58,7 +17,7 @@ svg {
 }
 
 .btnMargin:hover {
-  background: rgb(33, 80, 235);
+  background: rgb(61, 106, 255);
   box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;

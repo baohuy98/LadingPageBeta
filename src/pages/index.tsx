@@ -38,7 +38,7 @@ import ImgDataScience from '../../public/assets/image/data-science.png'
 import ImgReport from '../../public/assets/image/report-4.png'
 import ImgReport2 from '../../public/assets/image/report-5.png'
 import ImgReport3 from '../../public/assets/image/report-6.png'
-import MarginImg from '../../public/assets/image/margin.png'
+import ImgMargin from '../../public/assets/image/MarginBResource.png'
 import 'animate.css';
 import { Transition } from '@headlessui/react'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -1013,9 +1013,25 @@ export default function Home() {
       {/* FOOTER */}
       <footer>
         <section className='contact_section' id='contact_section'>
-          <a href="https://www.bsi.com.vn/vn/tin-tuc/tin-va-su-kien/lai-margin-9-9-phi-giao-dich-0-1" target='_blank'>
-            <Image src={MarginImg} alt='marginImg' className='w-full' />
-          </a>
+
+
+          <div className='relative'>
+            <div className='img_Margin'>
+              <Image src={ImgMargin} alt='imgMargin' />
+            </div>
+            <div style={{ boxShadow: ' 0 0 30px 5px rgba(0, 142, 236, 0.815)' }} className='btnMargin absolute bottom-[13%] left-[25%] w-[10%] h-[10%] rounded-full bg-transparent z-10 border-[2px] border-white grid place-items-center '>
+              <button className='text-white  font-semibold w-full h-full 2xl:text-[20px] xl:text-[13px] lg:text-[10px] lg:block md:hidden xs:hidden xxs:hidden'>
+                TÌM HIỂU NGAY
+              </button>
+              <button className='text-white  font-semibold w-full h-full  text-[5px] md:block lg:hidden xs:text-[5px] md:text-[8px] xs:block  xxs:text-[3px] '>
+                XEM THÊM
+              </button>
+            </div>
+            <div className='absolute w-[2px] h-[53%] bg-white top-[20%] left-[30%]'>
+
+            </div>
+          </div>
+
           <div className="bg-[url('../../public/assets/image/footer-img.png')] h-full bg-center bg-[length:100%_500px]">
             <div className='text-center pt-[80px]'>
               <div className='xl:text-[55px] lg:text-4xl md:text-3xl sm:text-lg xs:text-[17px] xxs:text-sm font-bold'>
