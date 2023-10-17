@@ -1,50 +1,50 @@
+import { Transition } from '@headlessui/react'
+import 'animate.css'
 import Head from 'next/head'
 import Image from 'next/image'
 import { Fragment, useEffect, useState } from 'react'
-import Logo from '../../public/assets/image/logo.png'
-import LogoColor from '../../public/assets/image/logo-color.png'
+import { AiOutlineArrowRight } from "react-icons/ai"
+import 'swiper/css'
+import 'swiper/css/navigation'
+import { Navigation } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import BMarketTele from '../../public/assets/image/B-market-telegram mockup.png'
+import TextB from '../../public/assets/image/B.png'
+import ImgMargin from '../../public/assets/image/MarginBResource.png'
+import QRZalo from '../../public/assets/image/QR-Zalo.png'
+import QRTele from '../../public/assets/image/QR-telegram.png'
+import BSignal from '../../public/assets/image/Rectangle-bsign.png'
+import BInfoTablet from '../../public/assets/image/b-info-tablet.png'
+import BInfoMobile1 from '../../public/assets/image/b-info1-mobile.png'
+import BInfo1 from '../../public/assets/image/b-info1.png'
+import BInfoMobile2 from '../../public/assets/image/b-info2-mobile.png'
+import BInfo2 from '../../public/assets/image/b-info2.png'
+import BInfoMobile3 from '../../public/assets/image/b-info3-mobile.png'
+import BInfo3 from '../../public/assets/image/b-info3.png'
+import BInfoMobile4 from '../../public/assets/image/b-info4-mobile.png'
+import BInfo4 from '../../public/assets/image/b-info4.png'
+import ImgBigData from '../../public/assets/image/big-data.png'
+import ImgDataScience from '../../public/assets/image/data-science.png'
+import ImgHuman from '../../public/assets/image/human.png'
+import IconLogo from '../../public/assets/image/icon-logo.png'
+import IconTele from '../../public/assets/image/icon-tele.png'
+import IconZalo from '../../public/assets/image/icon-zalo.png'
 import Item1 from '../../public/assets/image/item-1.png'
 import Item2 from '../../public/assets/image/item-2.png'
 import Item3 from '../../public/assets/image/item-3.png'
 import Item4 from '../../public/assets/image/item-4.png'
 import Laptop from '../../public/assets/image/laptop-layout.png'
+import LogoColor from '../../public/assets/image/logo-color.png'
+import Logo from '../../public/assets/image/logo.png'
 import Phone from '../../public/assets/image/phone-layout.png'
 import Phone2 from '../../public/assets/image/phone-layout2.png'
-import GifLaptop from '../../public/assets/image/section1.2.gif'
-import GifPhone from '../../public/assets/image/section1.1.gif'
-import TextB from '../../public/assets/image/B.png'
-import QRTele from '../../public/assets/image/QR-telegram.png'
-import QRZalo from '../../public/assets/image/QR-Zalo.png'
-import BMarketTele from '../../public/assets/image/B-market-telegram mockup.png'
-import BSignal from '../../public/assets/image/Rectangle-bsign.png'
-import IconLogo from '../../public/assets/image/icon-logo.png'
-import IconTele from '../../public/assets/image/icon-tele.png'
-import IconZalo from '../../public/assets/image/icon-zalo.png'
-import section2CSS from '../styles/section2.module.css'
-import BInfoTablet from '../../public/assets/image/b-info-tablet.png'
-import BInfo1 from '../../public/assets/image/b-info1.png'
-import BInfo2 from '../../public/assets/image/b-info2.png'
-import BInfo3 from '../../public/assets/image/b-info3.png'
-import BInfo4 from '../../public/assets/image/b-info4.png'
-import BInfoMobile1 from '../../public/assets/image/b-info1-mobile.png'
-import BInfoMobile2 from '../../public/assets/image/b-info2-mobile.png'
-import BInfoMobile3 from '../../public/assets/image/b-info3-mobile.png'
-import BInfoMobile4 from '../../public/assets/image/b-info4-mobile.png'
-import { AiOutlineArrowRight } from "react-icons/ai";
-import ImgHuman from '../../public/assets/image/human.png'
-import ImgRoboAI from '../../public/assets/image/robo-AI.png'
-import ImgBigData from '../../public/assets/image/big-data.png'
-import ImgDataScience from '../../public/assets/image/data-science.png'
 import ImgReport from '../../public/assets/image/report-4.png'
 import ImgReport2 from '../../public/assets/image/report-5.png'
 import ImgReport3 from '../../public/assets/image/report-6.png'
-import ImgMargin from '../../public/assets/image/MarginBResource.png'
-import 'animate.css';
-import { Transition } from '@headlessui/react'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
+import ImgRoboAI from '../../public/assets/image/robo-AI.png'
+import GifPhone from '../../public/assets/image/section1.1.gif'
+import GifLaptop from '../../public/assets/image/section1.2.gif'
+import section2CSS from '../styles/section2.module.css'
 
 const isServer = typeof window === 'undefined'
 const WOW = !isServer ? require('wowjs') : null
@@ -161,7 +161,7 @@ export default function Home() {
 
 
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://www.example.com/your-page" />
+        <link rel="canonical" href="https://resource.bsi.com.vn/" />
         <link rel="preload" href="https://resource.bsi.com.vn/resources/landing-page/background-section1.jpg" as="image" />
 
       </Head>
