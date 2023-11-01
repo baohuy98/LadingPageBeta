@@ -148,7 +148,7 @@ export default function Home() {
     <Fragment>
       <Head>
         <title>B-Sign - Công cụ hỗ trợ đầu tư hàng đầu thị trường</title>
-        <meta name="author" content="BSI" />
+        <meta name="author" content="BSI" />2
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
@@ -171,7 +171,9 @@ export default function Home() {
         <div className='h-[60px] bg-[#154162]'>
           <div className='flex justify-between items-center shadow-md'>
             <div className='logo'>
-              <Image src={Logo} alt='logo'></Image>
+              <a href="https://www.bsi.com.vn/vn" target='_blank'>
+                <Image src={Logo} alt='logo'></Image>
+              </a>
             </div>
             <div className='navbar md:block sm:hidden xs:hidden xxs:hidden'>
               <ul className="font-medium flex text-white">
