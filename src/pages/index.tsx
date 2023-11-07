@@ -354,7 +354,7 @@ export default function Home() {
                     height={150}
                     alt="img-item1"
                   ></Image>
-                  <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
+                  <a href='https://binfo.bsi.com.vn/' target='_blank' className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</a>
                 </div>
                 :
                 <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover1} ${isHoveredImg1 ? 'animate__animated animate__fadeIn' : ''} h-[305px] relative`}>
