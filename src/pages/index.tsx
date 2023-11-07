@@ -354,7 +354,7 @@ export default function Home() {
                     height={150}
                     alt="img-item1"
                   ></Image>
-                  <a href='https://binfo.bsi.com.vn/' target='_blank' className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</a>
+                  <span className="text-[#01A7FB] font-bold text-[30px] mt-5">Web Platform</span>
                 </div>
                 :
                 <div className={`${section2CSS.item_cardBackgroundHover} ${section2CSS.item_cardBackgroundHover1} ${isHoveredImg1 ? 'animate__animated animate__fadeIn' : ''} h-[305px] relative`}>
@@ -1048,7 +1048,7 @@ export default function Home() {
               <div className='flex md:flex-row sm:flex-col xs:flex-col xxs:flex-col justify-around md:py-[85px] sm:py-[50px] xs:py-[30px] xxs:py-[20px] xl:w-[1000px] lg:w-[750px] md:w-[700px]'>
                 <a href='https://zalo.me/1623670409453822014' target="_blank" className='lg:text-2xl md:text-lg text-white font-bold'><button className='m-3 btn-zalo md:px-[69px] sm:px-[69px] xs:px-[69px] xxs:px-[69px] py-[10px]'>Zalo</button></a>
                 <a href='https://t.me/betaEmarketbot' target="_blank" className='lg:text-2xl md:text-lg text-white font-bold'><button className='m-3 btn-tele md:px-[38px] sm:px-[51px] xs:px-[51px] xxs:px-[51px] py-[10px]'>Telegram</button></a>
-                <a href='#' className='lg:text-2xl md:text-lg text-white font-bold'><button className='m-3 btn-web md:px-[13px] sm:px-[34px] xs:px-[34px] xxs:px-[34px] py-[10px]'>Web Platform</button></a>
+                <a href='https://binfo.bsi.com.vn/' target='_blank' className='lg:text-2xl md:text-lg text-white font-bold'><button className='m-3 btn-web md:px-[13px] sm:px-[34px] xs:px-[34px] xxs:px-[34px] py-[10px]'>Web Platform</button></a>
               </div>
             </div>
           </div>
