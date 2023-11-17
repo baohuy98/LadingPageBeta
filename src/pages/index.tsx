@@ -362,7 +362,7 @@ export default function Home() {
                     <h1 className='text-[#FEBC08] text-[40px] font-bold'>
                       B-Info
                     </h1>
-                    <span className='text-[20px] font-semibold text-white'>Webapp đầy đủ và toàn diện <br /> với các công cụ hỗ trợ phân <br /> tích dữ & quan sát thị trường</span>
+                    <span className='text-[17px] font-semibold text-white'>Webapp đầy đủ và toàn diện <br /> với các công cụ hỗ trợ phân <br /> tích dữ liệu & quan sát thị trường</span>
                     <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
                       <a className='mr-2' href="https://binfo.bsi.com.vn/" target='_blank'>Xem thêm  </a>
                       <AiOutlineArrowRight />
@@ -490,7 +490,7 @@ export default function Home() {
                         <h1 className='text-[#FEBC08] xs:text-[40px] xxs:text-3xl font-bold'>
                           B-Info
                         </h1>
-                        <span className='md:text-[20px] sm:text-base xs:text-base xxs:text-xs font-semibold text-white'>Webapp đầy đủ và toàn diện <br /> với các công cụ hỗ trợ phân <br /> tích dữ & quan sát thị trường</span>
+                        <span className='md:text-[17px] sm:text-base xs:text-base xxs:text-xs font-semibold text-white'>Webapp đầy đủ và toàn diện <br /> với các công cụ hỗ trợ phân <br /> tích dữ liệu & quan sát thị trường</span>
                         <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
                           <a className='mr-2' href="https://binfo.bsi.com.vn/" target='_blank'>Xem thêm  </a>
                           <AiOutlineArrowRight />
