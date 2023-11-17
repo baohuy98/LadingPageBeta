@@ -393,7 +393,7 @@ export default function Home() {
                     <h1 className='text-[#FEBC08] text-[40px] font-bold'>
                       B-Market
                     </h1>
-                    <span className='text-[20px] font-semibold text-white'>Sự tiện lợi giành cho những <br /> Nhà đầu tư bận rộn  chatbot <br />  tự động hoàn toàn, dữ liệu <br /> Real-time trên nền tảng Zalo <br /> và Telegram</span>
+                    <span className='text-[20px] font-semibold text-white'>Sự tiện lợi dành cho những <br /> Nhà đầu tư bận rộn  chatbot <br />  tự động hoàn toàn, dữ liệu <br /> Real-time trên nền tảng Zalo <br /> và Telegram</span>
                     <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
                       <a className='mr-2' href="#bmarket_section">Xem thêm  </a>
                       <AiOutlineArrowRight />
@@ -523,7 +523,7 @@ export default function Home() {
                         <h1 className='text-[#FEBC08] xs:text-[40px] xxs:text-3xl font-bold'>
                           B-Market
                         </h1>
-                        <span className='md:text-[20px] sm:text-base xs:text-base xxs:text-xs font-semibold text-white'>Sự tiện lợi giành cho những <br /> Nhà đầu tư bận rộn  chatbot <br />  tự động hoàn toàn, dữ liệu <br /> Real-time trên nền tảng Zalo <br /> và Telegram</span>
+                        <span className='md:text-[20px] sm:text-base xs:text-base xxs:text-xs font-semibold text-white'>Sự tiện lợi dành cho những <br /> Nhà đầu tư bận rộn  chatbot <br />  tự động hoàn toàn, dữ liệu <br /> Real-time trên nền tảng Zalo <br /> và Telegram</span>
                         <div className='flex items-center mt-10 text-orange-500 hover:text-orange-300 duration-500 '>
                           <a className='mr-2' href="#bmarket_section">Xem thêm  </a>
                           <AiOutlineArrowRight />
