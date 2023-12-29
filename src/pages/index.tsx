@@ -1017,7 +1017,7 @@ export default function Home() {
         <section className='contact_section' id='contact_section'>
 
 
-          <div className='relative'>
+          {/* <div className='relative'>
             <div className='img_Margin'>
               <Image src={ImgMargin} alt='imgMargin' />
             </div>
@@ -1035,7 +1035,7 @@ export default function Home() {
             <div className='absolute w-[2px] h-[53%] bg-white top-[20%] left-[30%]'>
 
             </div>
-          </div>
+          </div> */}
 
           <div className="bg-[url('../../public/assets/image/footer-img.png')] h-full bg-center bg-[length:100%_500px]">
             <div className='text-center pt-[80px]'>
